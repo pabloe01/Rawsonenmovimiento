@@ -24,16 +24,6 @@
   }
 }
 
-// Webkit-style focus
-// ------------------
-.tab-focus() {
-  // Default
-  outline: thin dotted #333;
-  // Webkit
-  //outline: 5px auto -webkit-focus-ring-color;
-  outline: 5px auto @LightenlinkColor;
-  outline-offset: -2px;
-}
 
 // Center-align a block level element
 // ----------------------------------
@@ -565,7 +555,7 @@
   .clearfix();
 }
 .makeColumn(@columns: 1, @offset: 0) {
-  float: left;
+  float: @floatDirection;
   margin-left: (@gridColumnWidth * @offset) + (@gridGutterWidth * (@offset - 1)) + (@gridGutterWidth * 2);
   width: (@gridColumnWidth * @columns) + (@gridGutterWidth * (@columns - 1));
 }
@@ -601,7 +591,7 @@
     }
 
     [class*="span"] {
-      float: left;
+      float: @floatDirection;
       min-height: 1px; // prevent collapsing columns
       margin-left: @gridGutterWidth;
     }
@@ -653,12 +643,21 @@
       .clearfix();
       [class*="span"] {
         .input-block-level();
-        float: left;
+        float: @floatDirection;
+        & when (@is_rtl = false) {
         margin-left: @fluidGridGutterWidth;
         *margin-left: @fluidGridGutterWidth - (.5 / @gridRowWidth * 100 * 1%);
+        margin-right: 0;
+        }
+        & when (@is_rtl = true) {
+        margin-right: @fluidGridGutterWidth;
+        *margin-right: @fluidGridGutterWidth - (.5 / @gridRowWidth * 100 * 1%);
+        margin-left: 0;
+        }
       }
       [class*="span"]:first-child {
         margin-left: 0;
+        margin-right: 0;
       }
 
       // Space grid-sized controls properly if multiple per line
@@ -718,7 +717,7 @@
     .span (@columns) {
       width: (@fluidGridColumnWidth * @columns) + (@fluidGridGutterWidth * (@columns - 1));
       *width: (@fluidGridColumnWidth * @columns) + (@fluidGridGutterWidth * (@columns - 1)) - (.5 / @gridRowWidth * 100 * 1%);
-      float: left;
+      float: @floatDirection;
     }
 
     .row-fluid {

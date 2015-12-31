@@ -94,11 +94,22 @@
     -o-transition: all ease 0.241s;
     transition: all ease 0.241s;
   }
+  .tc-open-on-click .dropdown-submenu:hover > .dropdown-menu {
+    display: none;
+  }
+  /* Side Nav */
+  .tc-sn-inner.nav-collapse.collapse {
+    height: 100% !important;
+    overflow: auto !important;
+  }
   //expand submenus for tablets in landscape mode
   // .tc-is-mobile .navbar .nav li > ul ul {
   //   display: block;
   // }
+
 }
+
+
 
 @media (max-width: 979px) {
   .tc-header .outside {
@@ -109,6 +120,7 @@
     float:none;
     text-align: center;
     width: 100%;
+    clear: both;
   }
   .container.navbar-wrapper {
     margin-bottom: 0;
@@ -128,8 +140,8 @@
     float: none;
     width: 100%;
   }
-  .navbar-wrapper .navbar h2 {
-    display:none
+  .navbar-wrapper .navbar .site-description {
+    display: none !important;
   }
   .navbar-inner .tc-nav-button {
     display:block;
@@ -143,12 +155,10 @@
 
   /* Default Menu */
   .nav-collapse, .nav-collapse.collapse {
-    overflow: hidden;
-    height: 0;
     position: absolute;
     z-index:3000;
     right: 0px;
-    top: 42px;
+    top: 52px;
     background-color: #FAFAFA;
     background-image: -moz-linear-gradient(top, white, #F2F2F2);
     background-image: -webkit-gradient(linear, 0 0, 0 100%, from(white), to(#F2F2F2));
@@ -176,7 +186,9 @@
   .nav-collapse, .nav-collapse.collapse.in .nav{
     display: block;
   }
-
+  .navbar div > ul.nav > .menu-item:first-child > a {
+    padding-left: 15px
+  }
   .nav-collapse .nav > li > a, .nav-collapse .dropdown-menu a {
     font-weight:normal;
     -webkit-border-radius: 0px;
@@ -196,10 +208,7 @@
     padding-left: 25px;
   }
   .nav-collapse .dropdown-menu li li a {
-    padding-left: 50px;
-  }
-  .nav-collapse .dropdown-menu li li li a {
-    padding-left: 75px;
+    padding-left: 30px;
   }
 
   /* Hover Menu */
@@ -211,7 +220,7 @@
   }
 
   .tc-hover-menu.nav li {
-    text-align: left;
+    text-align: @textAlign;
     position: relative;
   }
   .tc-hover-menu.nav a:after {
@@ -226,10 +235,14 @@
     display: none;
   }
 
+  /* second menu placeholder */
+  .navbar .tc-menu-placeholder, .navbar .tc-main-menu-notice {
+    display: none;
+  }
 
   /* social blocks */
   .social-block {
-    float: left;
+    float: @floatDirection;
   }
 
   .social-block.widget {
@@ -255,7 +268,7 @@
 
   /*featured pages */
   .widget-front.hover .round-div,
-  article.hover .round-div {
+  article.hover .tc-thumbnail .round-div {
     -webkit-transform: scale(1.3);
     -moz-transform: scale(1.3);
     -ms-transform: scale(1.3);
@@ -337,19 +350,21 @@
   .sticky-enabled .site-logo img {
   }
   .sticky-enabled .brand {
-    float: left;
+    float: @floatDirection;
     width: 80%;
-    text-align: left;
+    text-align: @textAlign;
     padding-left: 10px;
     position: relative;
     z-index: 2;
   }
-  /* HIDE TAGLINE SINCE V3.2.0*/
-  .navbar-wrapper .navbar h2 {
-    display: none!important;
-  }
   .sticky-enabled .tc-header {
     min-height: 40px;
+  }
+  .sticky-enabled .tc-header .brand {
+    & when (@is_rtl = true){
+    float: left;
+    text-align: left;
+    }
   }
   .sticky-enabled .tc-header .outside {
     display: none;
@@ -359,9 +374,11 @@
     margin: 0px;
   }
 
+  .tc-header .navbar .btn-toggle-nav,
   .navbar .btn-navbar {
     display: block;
     margin: 10px 0;
+    /*float: right;*/
   }
   /* GIVE NAVBAR A SMALLER Z-index than logo / title SINCE V3.2.0*/
   .sticky-enabled .navbar-wrapper {
@@ -391,17 +408,30 @@
     float: left;
     margin: 14px 0 0;
   }
+  .logo-right .navbar .navbar-inner .social-block {
+    float: right;
+  }
   /* MENU CHANGES SINCE V3.2.0 */
   .navbar .nav-collapse .dropdown-menu a {
     padding: 3px 5px;
   }
 
   .navbar .nav-collapse ul.nav > li li a {
-    padding-left: 30px;
+    & when (@is_rtl = true) {
+      padding-right: 30px;
+    }
+    & when (@is_rtl = false) {
+      padding-left: 30px;
+    }
   }
 
   .navbar .nav-collapse ul.nav > li li li a {
-    padding-left: 60px;
+     & when (@is_rtl = true) {
+      padding-right: 50px;
+    }
+    & when (@is_rtl = false) {
+      padding-left: 50px;
+    }
   }
 
   .dropdown-submenu>a:after {
@@ -417,7 +447,7 @@
   }
 
   .navbar .navbar-inner .nav li {
-    text-align: left;
+    text-align: @textAlign;
     position: relative;
   }
 
@@ -443,8 +473,11 @@
     background-color:#fff;
   }
 
-  button.btn.btn-navbar {
+/*  button.btn.btn-navbar {
     transition: all 0.1s ease-in-out;
+  }*/
+  .btn-toggle-nav .menu-label {
+    display: none;
   }
 }
 @media (max-width: 979px) and (min-width: 768px)  {
@@ -504,6 +537,10 @@
   #right.widget-area:before{
     border-left:0px;
   }
+  .tc-no-sticky-header .navbar-wrapper, 
+  .sticky-disabled .navbar-wrapper { 
+    clear: both; 
+  }
   .navbar-inner {
     margin: -20px;
   }
@@ -540,7 +577,7 @@
   /*force comment layout to be not responsive */
   .row-fluid .comment-avatar.span2 {
     width: 14.893617021%;
-    float: left;
+    float: @floatDirection;
     margin-right: 2.762430939%;
   }
   footer#footer {
@@ -561,6 +598,29 @@
   }
   .sticky-enabled .navbar .btn-navbar {
     margin: 9px 0px;
+  }
+  /* POST GRID */
+  .featurette-divider.post-list-grid{
+      display: none;
+  }
+  .tc-post-list-grid .featurette-divider.__after_article{
+      display: block;
+  }
+  .tc-post-list-grid .entry-summary {
+    padding: 5%;
+  }
+  .expanded .tc-grid-post figcaption {
+    max-width: none;
+    margin-left: 0;
+  }
+  [class*=grid-cols-] .tc-grid-post figure {
+    height: 225px;
+    max-height: 225px;
+    line-height: 225px;
+  }
+  /* ICONS */
+  .tc-post-list-grid article .tc-grid-icon:before, .tc-post-list-grid article.format-quote .tc-grid-icon:before, .tc-post-list-grid article.format-status .tc-grid-icon:before, {
+    font-size: 60px;
   }
 }
 
@@ -639,8 +699,35 @@
   .navbar-inner .social-block a {
     padding-right: 6px;
   }
+  /* GRID */
+  .tc-g-cont {
+    max-height: 80px;
+    overflow: hidden;
+  }
 }
-
+/* Side Nav */
+@media (max-width: 400px){
+  nav#tc-sn {
+    width: 400px;
+    max-width: 100%;
+  }
+  #tc-sn .nav-collapse {
+    background: #fff;
+  }
+  /* when open, give to the menu a greater z-index
+   */
+  .tc-sn-visible:not(.sn-close) #tc-sn {
+    z-index: 9999;
+  }
+  .tc-sn-visible {
+    overflow: hidden;
+  }
+  /* Hack*/
+  /* prevent pan in mobiles max-width: 400px: should we apply this for all tc-is-mobile losing the page scroll down ?? */
+  .tc-sn-visible #tc-page-wrap { position: absolute; width: 100%;}
+  .tc-sn-visible:not(.sn-close) #tc-page-wrap { left: initial !important;}
+  /*end prevent overflows in mobiles */
+}
 @media (max-width: 320px) {
   .carousel .item {
     line-height: 140px;

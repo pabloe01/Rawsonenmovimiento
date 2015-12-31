@@ -1,0 +1,116 @@
+/*
+ Theme Name:     Rawson en movimiento
+ Theme URI:      http://rawsonenmovimiento.com.ar
+ Description:    Rawson en movimiento
+ Author:         Pablo
+ Author URI:     http://mysite.com/
+ Template:       customizr
+ Version:        1.0.0
+*/
+
+body {
+    font-family: 'Andada', sans-serif;
+}
+
+.brand {
+    max-width: 85% !important;   
+}
+
+.tc-header .brand a {
+    margin-top: 0px !important;
+}
+
+.sticky-disabled .logo-centered .navbar-wrapper, .tc-no-sticky-header .logo-centered .navbar-wrapper {
+    max-width: 10%;
+    clear: initial;
+    float: right;
+}
+
+.navbar .btn-toggle-nav .icon-bar {
+    background: #990033;
+}
+
+.navbar .navbar-inner {
+    margin-top: 0px;
+}
+
+.btn-toggle-nav {
+    padding-top: 50%;
+    margin-top: 0px;
+}
+
+.entry-title {
+    text-align: center;
+    font-weight: 600;
+}
+hr {
+    border-top: 1px solid #A31335 !important;
+}
+
+.mapa {
+    width: 60%;
+    margin: auto;
+}
+
+.procesando {
+    /*position:absolute;*/
+    width:100%;
+    height:100%;    
+    background-color: #FFCC00;
+    overflow: hidden;
+    opacity:0.1;
+    filter:alpha(opacity=80)
+}
+
+.rotation{-webkit-animation-duration:10s;-webkit-animation-iteration-count:infinite;-webkit-animation-timing-function:linear;-moz-animation-duration:10s;-moz-animation-iteration-count:infinite;-moz-animation-timing-function:linear;-o-animation-duration:10s;-o-animation-iteration-count:infinite;-o-animation-timing-function:linear;animation-duration:10s;animation-iteration-count:infinite;animation-timing-function:linear}
+.rotation.forward{-webkit-animation-name:forward_rotation;-moz-animation-name:forward_rotation;-o-animation-name:forward_rotation;animation-name:forward_rotation}
+.rotation.backward{-webkit-animation-name:backward_rotation;-moz-animation-name:backward_rotation;-o-animation-name:backward_rotation;animation-name:backward_rotation}
+@-webkit-keyframes forward_rotation{0%{-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);-o-transform:rotate(0deg);transform:rotate(0deg);}100%{-webkit-transform:rotate(360deg);-moz-transform:rotate(360deg);-o-transform:rotate(360deg);transform:rotate(360deg);}}@-moz-keyframes forward_rotation{0%{-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);-o-transform:rotate(0deg);transform:rotate(0deg);}100%{-webkit-transform:rotate(360deg);-moz-transform:rotate(360deg);-o-transform:rotate(360deg);transform:rotate(360deg);}}@-o-keyframes forward_rotation{0%{-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);-o-transform:rotate(0deg);transform:rotate(0deg);}100%{-webkit-transform:rotate(360deg);-moz-transform:rotate(360deg);-o-transform:rotate(360deg);transform:rotate(360deg);}}@keyframes forward_rotation{0%{-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);-o-transform:rotate(0deg);transform:rotate(0deg);}100%{-webkit-transform:rotate(360deg);-moz-transform:rotate(360deg);-o-transform:rotate(360deg);transform:rotate(360deg);}}
+@-webkit-keyframes backward_rotation{0%{-webkit-transform:rotate(342deg);-moz-transform:rotate(342deg);-o-transform:rotate(342deg);transform:rotate(342deg);}100%{-webkit-transform:rotate(-18deg);-moz-transform:rotate(-18deg);-o-transform:rotate(-18deg);transform:rotate(-18deg);}}@-moz-keyframes backward_rotation{0%{-webkit-transform:rotate(342deg);-moz-transform:rotate(342deg);-o-transform:rotate(342deg);transform:rotate(342deg);}100%{-webkit-transform:rotate(-18deg);-moz-transform:rotate(-18deg);-o-transform:rotate(-18deg);transform:rotate(-18deg);}}@-o-keyframes backward_rotation{0%{-webkit-transform:rotate(342deg);-moz-transform:rotate(342deg);-o-transform:rotate(342deg);transform:rotate(342deg);}100%{-webkit-transform:rotate(-18deg);-moz-transform:rotate(-18deg);-o-transform:rotate(-18deg);transform:rotate(-18deg);}}@keyframes backward_rotation{0%{-webkit-transform:rotate(342deg);-moz-transform:rotate(342deg);-o-transform:rotate(342deg);transform:rotate(342deg);}100%{-webkit-transform:rotate(-18deg);-moz-transform:rotate(-18deg);-o-transform:rotate(-18deg);transform:rotate(-18deg);}}
+
+.icon_gear{background:url(http://www.rawsonenmovimiento.com.ar/wp-content/uploads/2015/12/logo.gif) no-repeat center center;background-size: 100%}
+
+.wrap{position:absolute;width:800px;height:300px;left:50%;top:50%;margin-left:-200px;margin-top:-150px}
+.gear{top:0;right:0}
+#gear1{top:100px}
+#gear2{right:140px;top:10px}
+#gear3{right:230px;top:133px}
+@media screen and (max-width:820px){
+    .wrap{position:relative; width:auto; height:auto; margin:0; padding: 0 30px; left: 0}
+    .wrap .texts{padding-right: 0}
+    .gears{display:none}
+}   
+
+.tc-header {
+    border-bottom: 5px solid #A31335 !important;
+}
+
+.featurette-divider {
+    margin: 11px 0;
+}
+
+.ui-dialog {
+    max-width: 60%;    
+}
+
+.borderraw {
+    -moz-box-shadow: -5px -5px 10px #FFCC00;
+    -webkit-box-shadow: -5px -5px 10px #FFCC00;
+    box-shadow: -5px -5px 10px #FFCC00;
+}
+
+.ui-state-focus{
+/* color: initial !important;
+ border: initial !important;
+ background: none !important;*/
+}
+
+.ui-button-icon-only .ui-button-text, .ui-button-icons-only .ui-button-text {
+padding: 0px;
+    
+}
+
+.contact {
+    width: 320px;
+    margin: 0 auto;
+}

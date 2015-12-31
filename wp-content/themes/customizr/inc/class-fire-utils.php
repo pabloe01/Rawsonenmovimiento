@@ -6,77 +6,151 @@
 * @package      Customizr
 * @subpackage   classes
 * @since        3.0
-* @author       Nicolas GUILLAUME <nicolas@themesandco.com>
-* @copyright    Copyright (c) 2013, Nicolas GUILLAUME
-* @link         http://themesandco.com/customizr
+* @author       Nicolas GUILLAUME <nicolas@presscustomizr.com>
+* @copyright    Copyright (c) 2013-2015, Nicolas GUILLAUME
+* @link         http://presscustomizr.com/customizr
 * @license      http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 */
 if ( ! class_exists( 'TC_utils' ) ) :
   class TC_utils {
 
       //Access any method or var of the class with classname::$instance -> var or method():
+      static $inst;
       static $instance;
       public $default_options;
       public $db_options;
       public $options;//not used in customizer context only
       public $is_customizing;
+      public $tc_options_prefixes;
 
       function __construct () {
+        self::$inst =& $this;
+        self::$instance =& $this;
 
-          self::$instance =& $this;
+        //init properties
+        add_action( 'after_setup_theme'       , array( $this , 'tc_init_properties') );
 
-          //get all options
-          add_filter  ( '__options'                           , array( $this , 'tc_get_theme_options' ), 10, 1);
-          //get single option
-          add_filter  ( '__get_option'                        , array( $this , 'tc_get_option' ), 10, 2 );
+        //Various WP filters for
+        //content
+        //thumbnails => parses image if smartload enabled
+        //title
+        add_action( 'wp_head'                 , array( $this , 'tc_wp_filters') );
 
-          //some useful filters
-          add_filter  ( '__ID'                                , array( $this , 'tc_get_the_ID' ));
-          add_filter  ( '__screen_layout'                     , array( $this , 'tc_get_current_screen_layout' ) , 10 , 2 );
-          add_filter  ( '__is_home'                           , array( $this , 'tc_is_home' ) );
-          add_filter  ( '__is_home_empty'                     , array( $this , 'tc_is_home_empty' ) );
-          add_filter  ( '__post_type'                         , array( $this , 'tc_get_post_type' ) );
-          add_filter  ( '__is_no_results'                     , array( $this , 'tc_is_no_results') );
-          add_filter  ( '__article_selectors'                 , array( $this , 'tc_article_selectors' ));
+        //get all options
+        add_filter( '__options'               , array( $this , 'tc_get_theme_options' ), 10, 1);
+        //get single option
+        add_filter( '__get_option'            , array( $this , 'tc_opt' ), 10, 2 );//deprecated
 
-          //social networks
-          add_filter  ( '__get_socials'                       , array( $this , 'tc_get_social_networks' ) );
+        //some useful filters
+        add_filter( '__ID'                    , array( $this , 'tc_id' ));//deprecated
+        add_filter( '__screen_layout'         , array( $this , 'tc_get_layout' ) , 10 , 2 );//deprecated
+        add_filter( '__is_home'               , array( $this , 'tc_is_home' ) );
+        add_filter( '__is_home_empty'         , array( $this , 'tc_is_home_empty' ) );
+        add_filter( '__post_type'             , array( $this , 'tc_get_post_type' ) );
+        add_filter( '__is_no_results'         , array( $this , 'tc_is_no_results') );
+        add_filter( '__article_selectors'     , array( $this , 'tc_article_selectors' ) );
 
-          //WP filters
-          add_filter  ( 'the_content'                         , array( $this , 'tc_fancybox_content_filter' ));
-          add_filter  ( 'wp_title'                            , array( $this , 'tc_wp_title' ), 10, 2 );
+        //social networks
+        add_filter( '__get_socials'           , array( $this , 'tc_get_social_networks' ) );
 
-          //init properties
-          add_action ( 'after_setup_theme'                    , array( $this , 'tc_init_properties') );
+        //refresh the theme options right after the _preview_filter when previewing
+        add_action( 'customize_preview_init'  , array( $this , 'tc_customize_refresh_db_opt' ) );
       }
 
-
-
+      /***************************
+      * EARLY HOOKS
+      ****************************/
       /**
       * Init TC_utils class properties after_setup_theme
       * Fixes the bbpress bug : Notice: bbp_setup_current_user was called incorrectly. The current user is being initialized without using $wp->init()
       * tc_get_default_options uses is_user_logged_in() => was causing the bug
+      * hook : after_setup_theme
       *
       * @package Customizr
       * @since Customizr 3.2.3
       */
       function tc_init_properties() {
-        $this -> is_customizing   = $this -> tc_is_customizing();
+        //all customizr theme options start by "tc_" by convention
+        $this -> tc_options_prefixes = apply_filters('tc_options_prefixes', array('tc_') );
+        $this -> is_customizing   = TC___::$instance -> tc_is_customizing();
+        $this -> db_options       = false === get_option( TC___::$tc_option_group ) ? array() : (array)get_option( TC___::$tc_option_group );
         $this -> default_options  = $this -> tc_get_default_options();
-        $this -> db_options       = (array) get_option( TC___::$tc_option_group );
+        $_trans                   = TC___::tc_is_pro() ? 'started_using_customizr_pro' : 'started_using_customizr';
 
         //What was the theme version when the user started to use Customizr?
-        //new install = tc_skin option is not set yet
+        //new install = no options yet
         //very high duration transient, this transient could actually be an option but as per the themes guidelines, too much options are not allowed.
-        $_db_options = $this -> db_options;
-        if ( ! isset( $_db_options['tc_skin'] ) || ! esc_attr( get_transient( 'started_using_customizr' ) ) ) {
+        if ( 1 >= count( $this -> db_options ) || ! esc_attr( get_transient( $_trans ) ) ) {
           set_transient(
-            'started_using_customizr',
-            sprintf('%s|%s' , ! isset( $_db_options['tc_skin'] ) ? 'with' : 'before', CUSTOMIZR_VER ),
+            $_trans,
+            sprintf('%s|%s' , 1 >= count( $this -> db_options ) ? 'with' : 'before', CUSTOMIZR_VER ),
             60*60*24*9999
           );
         }
       }
+
+
+
+      /**
+      * hook : after_setup_theme
+      * @package Customizr
+      * @since Customizr 3.3.0
+      */
+      function tc_wp_filters() {
+        add_filter( 'the_content'                         , array( $this , 'tc_fancybox_content_filter' ) );
+        if ( esc_attr( TC_utils::$inst->tc_opt( 'tc_img_smart_load' ) ) ) {
+          add_filter( 'the_content'                       , array( $this , 'tc_parse_imgs' ), PHP_INT_MAX );
+          add_filter( 'tc_thumb_html'                     , array( $this , 'tc_parse_imgs' ) );
+        }
+        add_filter( 'wp_title'                            , array( $this , 'tc_wp_title' ), 10, 2 );
+      }
+
+
+      /**
+      * hook : the_content
+      * Inspired from Unveil Lazy Load plugin : https://wordpress.org/plugins/unveil-lazy-load/ by @marubon
+      *
+      * @return string
+      * @package Customizr
+      * @since Customizr 3.3.0
+      */
+      function tc_parse_imgs( $_html ) {
+        if( is_feed() || is_preview() || ( wp_is_mobile() && apply_filters('tc_disable_img_smart_load_mobiles', false ) ) )
+          return $_html;
+
+        if ( strpos( $_html, 'data-src' ) !== false )
+          return $_html;
+
+        return preg_replace_callback('#<img([^>]+?)src=[\'"]?([^\'"\s>]+)[\'"]?([^>]*)>#', array( $this , 'tc_regex_callback' ) , $_html);
+      }
+
+
+      /**
+      * callback of preg_replace_callback in tc_parse_imgs
+      * Inspired from Unveil Lazy Load plugin : https://wordpress.org/plugins/unveil-lazy-load/ by @marubon
+      *
+      * @return string
+      * @package Customizr
+      * @since Customizr 3.3.0
+      */
+      private function tc_regex_callback( $matches ) {
+        $_placeholder = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
+        if ( preg_match('/ data-smartload *= *"false" */', $matches[0]) )
+          return sprintf('<img %1$s src="%2$s" %3$s>',
+            $matches[1],
+            $matches[2],
+            $matches[3]
+          );
+        else
+          return sprintf('<img %1$s src="%2$s" data-src="%3$s" %4$s>',
+            $matches[1],
+            $_placeholder,
+            $matches[2],
+            $matches[3]
+          );
+      }
+
+
 
 
       /**
@@ -85,33 +159,44 @@ if ( ! class_exists( 'TC_utils' ) ) :
       * @package Customizr
       * @since Customizr 3.1.23
       */
-      function tc_get_skin_color() {
-          $_skin_map    = TC_init::$instance -> skin_color_map;
-          $_active_skin =  str_replace('.min.', '.', basename( TC_init::$instance -> tc_active_skin() ) );
-          //falls back to blue3 ( default #27CDA5 ) if not defined
-        return ( false != $_active_skin && isset($_skin_map[$_active_skin]) ) ? $_skin_map[$_active_skin] : '#27CDA5';
+      function tc_get_skin_color( $_what = null ) {
+        $_color_map    = TC_init::$instance -> skin_color_map;
+        $_active_skin =  str_replace('.min.', '.', basename( TC_init::$instance -> tc_get_style_src() ) );
+        //falls back to blue3 ( default #27CDA5 ) if not defined
+        $_to_return = array( '#27CDA5', '#1b8d71' );
+
+        switch ($_what) {
+          case 'all':
+            $_to_return = ( is_array($_color_map) ) ? $_color_map : array();
+          break;
+
+          case 'pair':
+            $_to_return = ( false != $_active_skin && is_array($_color_map[$_active_skin]) ) ? $_color_map[$_active_skin] : $_to_return;
+          break;
+
+          default:
+            $_to_return = ( false != $_active_skin && isset($_color_map[$_active_skin][0]) ) ? $_color_map[$_active_skin][0] : $_to_return[0];
+          break;
+        }
+        return apply_filters( 'tc_get_skin_color' , $_to_return , $_what );
       }
+
 
 
 
       /**
-      * Returns a boolean on the customizer's state
+      * Helper
+      * Returns wheter or not the option is a theme/addon option
+      *
+      * @return bool
       *
       * @package Customizr
-      * @since Customizr 3.1.11
+      * @since Customizr 3.4.9
       */
-      function tc_is_customizing() {
-        //checks if is customizing : two contexts, admin and front (preview frame)
-        global $pagenow;
-        $is_customizing = false;
-        if ( is_admin() && isset( $pagenow ) && 'customize.php' == $pagenow ) {
-                $is_customizing = true;
-        } else if ( ! is_admin() && isset($_REQUEST['wp_customize']) ) {
-                $is_customizing = true;
-        }
-        return $is_customizing;
+      function tc_is_customizr_option( $option_key ) {
+        $_is_tc_option = in_array( substr( $option_key, 0, 3 ), $this -> tc_options_prefixes );
+        return apply_filters( 'tc_is_customizr_option', $_is_tc_option , $option_key );
       }
-
 
 
 
@@ -122,18 +207,28 @@ if ( ! class_exists( 'TC_utils' ) ) :
       * @since Customizr 3.1.11
       */
       function tc_get_default_options() {
-        $def_options = get_option( "tc_theme_defaults" );
+        $_db_opts     = empty($this -> db_options) ? $this -> tc_cache_db_options() : $this -> db_options;
+        $def_options  = isset($_db_opts['defaults']) ? $_db_opts['defaults'] : array();
 
-        //Always update the default option when (OR) :
-        // 1) they are not defined
-        // 2) customzing => takes into account if user has set a filter or added a new customizer setting
+        //Don't update if default options are not empty + customizing context
+        //customizing out ? => we can assume that the user has at least refresh the default once (because logged in, see conditions below) before accessing the customizer
+        //customzing => takes into account if user has set a filter or added a new customizer setting
+        if ( ! empty($def_options) && $this -> is_customizing )
+          return apply_filters( 'tc_default_options', $def_options );
+
+        //Always update/generate the default option when (OR) :
+        // 1) user is logged in
+        // 2) they are not defined
         // 3) theme version not defined
         // 4) versions are different
-        if ( is_user_logged_in() || ! $def_options || $this -> is_customizing || ! isset($def_options['ver']) || 0 != version_compare( $def_options['ver'] , CUSTOMIZR_VER ) ) {
-          $def_options          = $this -> tc_generate_default_options( TC_utils_settings_map::$instance -> tc_customizer_map( $get_default_option = 'true' ) , 'tc_theme_options' );
-          //Adds the version
+        if ( is_user_logged_in() || empty($def_options) || ! isset($def_options['ver']) || 0 != version_compare( $def_options['ver'] , CUSTOMIZR_VER ) ) {
+          $def_options          = $this -> tc_generate_default_options( TC_utils_settings_map::$instance -> tc_get_customizer_map( $get_default_option = 'true' ) , 'tc_theme_options' );
+          //Adds the version in default
           $def_options['ver']   =  CUSTOMIZR_VER;
-          update_option( "tc_theme_defaults" , $def_options );
+
+          $_db_opts['defaults'] = $def_options;
+          //writes the new value in db
+          update_option( "tc_theme_options" , $_db_opts );
         }
         return apply_filters( 'tc_default_options', $def_options );
       }
@@ -148,36 +243,24 @@ if ( ! class_exists( 'TC_utils' ) ) :
       * @since Customizr 3.0.3
       */
       function tc_generate_default_options( $map, $option_group = null ) {
-          //do we have to look in a specific group of option (plugin?)
-          $option_group   = is_null($option_group) ? 'tc_theme_options' : $option_group;
+        //do we have to look in a specific group of option (plugin?)
+        $option_group   = is_null($option_group) ? 'tc_theme_options' : $option_group;
 
-          //initialize the default array with the sliders options
-          $defaults = array();
+        //initialize the default array with the sliders options
+        $defaults = array();
 
-          foreach ($map['add_setting_control'] as $key => $options) {
+        foreach ($map['add_setting_control'] as $key => $options) {
+          //check it is a customizr option
+          if(  ! $this -> tc_is_customizr_option( $key ) )
+            continue;
 
-            //check it is a customizr option
-            if( false !== strpos( $key  , $option_group ) ) {
-
-              //isolate the option name between brackets [ ]
-              $option_name = '';
-              $option = preg_match_all( '/\[(.*?)\]/' , $key , $match );
-              if ( isset( $match[1][0] ) )
-                {
-                    $option_name = $match[1][0];
-                }
-
-              //write default option in array
-              if(isset($options['default'])) {
-                $defaults[$option_name] = $options['default'];
-              }
-              else {
-                $defaults[$option_name] = null;
-              }
-
-            }//end if
-
-          }//end foreach
+          $option_name = $key;
+          //write default option in array
+          if( isset($options['default']) )
+            $defaults[$option_name] = ( 'checkbox' == $options['type'] ) ? (bool) $options['default'] : $options['default'];
+          else
+            $defaults[$option_name] = null;
+        }//end foreach
 
         return $defaults;
       }
@@ -193,8 +276,8 @@ if ( ! class_exists( 'TC_utils' ) ) :
       */
       function tc_get_theme_options ( $option_group = null ) {
           //do we have to look in a specific group of option (plugin?)
-          $option_group       = is_null($option_group) ? 'tc_theme_options' : $option_group;
-          $saved              = (array) get_option( $option_group );
+          $option_group       = is_null($option_group) ? TC___::$tc_option_group : $option_group;
+          $saved              = empty($this -> db_options) ? $this -> tc_cache_db_options() : $this -> db_options;
           $defaults           = $this -> default_options;
           $__options          = wp_parse_args( $saved, $defaults );
           //$__options        = array_intersect_key( $__options, $defaults );
@@ -210,21 +293,76 @@ if ( ! class_exists( 'TC_utils' ) ) :
       * @package Customizr
       * @since Customizr 1.0
       */
-      function tc_get_option( $option_name , $option_group = null ) {
-          //do we have to look in a specific group of option (plugin?)
-          $option_group       = is_null($option_group) ? 'tc_theme_options' : $option_group;
-          if ( $this -> tc_is_customizing() || is_admin() )
-            $_db_options = (array) get_option( $option_group );
-          else
-            $_db_options = empty($this-> db_options) ? $this -> tc_cache_db_options($option_group) : $this-> db_options;
+      function tc_opt( $option_name , $option_group = null, $use_default = true ) {
+        //do we have to look for a specific group of option (plugin?)
+        $option_group = is_null($option_group) ? TC___::$tc_option_group : $option_group;
+        //when customizing, the db_options property is refreshed each time the preview is refreshed in 'customize_preview_init'
+        $_db_options  = empty($this -> db_options) ? $this -> tc_cache_db_options() : $this -> db_options;
 
-          $_defaults          = $this -> default_options;
-          $__options          = wp_parse_args( $_db_options, $_defaults );
-          //$options            = array_intersect_key( $_db_options , $defaults);
-          $returned_option    = isset($__options[$option_name]) ? $__options[$option_name] : false;
-        return apply_filters( 'tc_get_option' , $returned_option , $option_name , $option_group );
+        //do we have to use the default ?
+        $__options    = $_db_options;
+        $_default_val = false;
+        if ( $use_default ) {
+          $_defaults      = $this -> default_options;
+          if ( isset($_defaults[$option_name]) )
+            $_default_val = $_defaults[$option_name];
+          $__options      = wp_parse_args( $_db_options, $_defaults );
+        }
+
+        //assign false value if does not exist, just like WP does
+        $_single_opt    = isset($__options[$option_name]) ? $__options[$option_name] : false;
+
+        //ctx retro compat => falls back to default val if ctx like option detected
+        //important note : some options like tc_slider are not concerned by ctx
+        if ( ! $this -> tc_is_option_excluded_from_ctx( $option_name ) ) {
+          if ( is_array( $_single_opt ) && ! class_exists( 'TC_contx' ) )
+            $_single_opt = $_default_val;
+        }
+
+        //allow contx filtering globally
+        $_single_opt = apply_filters( "tc_opt" , $_single_opt , $option_name , $option_group, $_default_val );
+
+        //allow single option filtering
+        return apply_filters( "tc_opt_{$option_name}" , $_single_opt , $option_name , $option_group, $_default_val );
       }
 
+
+
+      /**
+      * The purpose of this callback is to refresh and store the theme options in a property on each customize preview refresh
+      * => preview performance improvement
+      * 'customize_preview_init' is fired on wp_loaded, once WordPress is fully loaded ( after 'init', before 'wp') and right after the call to 'customize_register'
+      * This method is fired just after the theme option has been filtered for each settings by the WP_Customize_Setting::_preview_filter() callback
+      * => if this method is fired before this hook when customizing, the user changes won't be taken into account on preview refresh
+      *
+      * hook : customize_preview_init
+      * @return  void
+      *
+      * @since  v3.4+
+      */
+      function tc_customize_refresh_db_opt(){
+        $this -> db_options = false === get_option( TC___::$tc_option_group ) ? array() : (array)get_option( TC___::$tc_option_group );
+      }
+
+
+
+      /**
+      * Set an option value in the theme option group
+      * @param $option_name : string ( like tc_skin )
+      * @param $option_value : sanitized option value, can be a string, a boolean or an array
+      * @param $option_group : string ( like tc_theme_options )
+      * @return  void
+      *
+      * @package Customizr
+      * @since Customizr 3.4+
+      */
+      function tc_set_option( $option_name , $option_value, $option_group = null ) {
+        $option_group           = is_null($option_group) ? TC___::$tc_option_group : $option_group;
+        $_options               = $this -> tc_get_theme_options( $option_group );
+        $_options[$option_name] = $option_value;
+
+        update_option( $option_group, $_options );
+      }
 
 
 
@@ -234,9 +372,10 @@ if ( ! class_exists( 'TC_utils' ) ) :
       * @package Customizr
       * @since Customizr 3.2.0
       */
-      function tc_cache_db_options($option_group) {
-        $this -> db_options = (array) get_option( $option_group );
-        return $this-> db_options;
+      function tc_cache_db_options($opt_group = null) {
+        $opts_group = is_null($opt_group) ? TC___::$tc_option_group : $opt_group;
+        $this -> db_options = false === get_option( $opt_group ) ? array() : (array)get_option( $opt_group );
+        return $this -> db_options;
       }
 
 
@@ -249,19 +388,16 @@ if ( ! class_exists( 'TC_utils' ) ) :
       * @package Customizr
       * @since Customizr 1.0
       */
-      function tc_get_the_ID()  {
-          global $wp_version;
-          if ( version_compare( $wp_version, '3.4.1', '<=' ) )
-            {
-              $tc_id            = get_the_ID();
-            }
-            else
-            {
-              $queried_object   = get_queried_object();
-              $tc_id            = ! is_null( get_post() ) ? get_the_ID() : null;
-              $tc_id            = ( isset ($queried_object -> ID) ) ? $queried_object -> ID : $tc_id;
-            }
-          return ( is_404() || is_search() || is_archive() ) ? null : $tc_id;
+      public static function tc_id()  {
+        if ( in_the_loop() ) {
+          $tc_id            = get_the_ID();
+        } else {
+          global $post;
+          $queried_object   = get_queried_object();
+          $tc_id            = ( ! empty ( $post ) && isset($post -> ID) ) ? $post -> ID : null;
+          $tc_id            = ( isset ($queried_object -> ID) ) ? $queried_object -> ID : $tc_id;
+        }
+        return ( is_404() || is_search() || is_archive() ) ? null : $tc_id;
       }
 
 
@@ -273,28 +409,32 @@ if ( ! class_exists( 'TC_utils' ) ) :
       * @package Customizr
       * @since Customizr 1.0
       */
-      function tc_get_current_screen_layout ( $post_id , $sidebar_or_class) {
+      public static function tc_get_layout( $post_id , $sidebar_or_class = 'class' ) {
           $__options                    = tc__f ( '__options' );
-
           global $post;
-
           //Article wrapper class definition
           $global_layout                = apply_filters( 'tc_global_layout' , TC_init::$instance -> global_layout );
 
           /* DEFAULT LAYOUTS */
-          //get the global default layout
-          $tc_sidebar_global_layout     = $__options['tc_sidebar_global_layout'];
-          //get the post default layout
-          $tc_sidebar_post_layout       = $__options['tc_sidebar_post_layout'];
-          //get the page default layout
-          $tc_sidebar_page_layout       = $__options['tc_sidebar_page_layout'];
-
           //what is the default layout we want to apply? By default we apply the global default layout
-          $tc_sidebar_default_layout    = $tc_sidebar_global_layout;
+          $tc_sidebar_default_layout    = esc_attr( $__options['tc_sidebar_global_layout'] );
+
+          //checks if the 'force default layout' option is checked and return the default layout before any specific layout
+          if( isset($__options['tc_sidebar_force_layout']) && 1 == $__options['tc_sidebar_force_layout'] ) {
+            $class_tab  = $global_layout[$tc_sidebar_default_layout];
+            $class_tab  = $class_tab['content'];
+            $tc_screen_layout = array(
+              'sidebar' => $tc_sidebar_default_layout,
+              'class'   => $class_tab
+            );
+            return $tc_screen_layout[$sidebar_or_class];
+          }
+
+
           if ( is_single() )
-            $tc_sidebar_default_layout  = $tc_sidebar_post_layout;
+            $tc_sidebar_default_layout  = esc_attr( $__options['tc_sidebar_post_layout'] );
           if ( is_page() )
-            $tc_sidebar_default_layout  = $tc_sidebar_page_layout;
+            $tc_sidebar_default_layout  = esc_attr( $__options['tc_sidebar_page_layout'] );
 
           //builds the default layout option array including layout and article class
           $class_tab  = $global_layout[$tc_sidebar_default_layout];
@@ -304,28 +444,16 @@ if ( ! class_exists( 'TC_utils' ) ) :
                       'class'   => $class_tab
           );
 
-          //checks if the 'force default layout' option is checked and return the default layout before any specific layout
-          $force_layout = $__options['tc_sidebar_force_layout'];
-          if( $force_layout == 1) {
-            $class_tab  = $global_layout[$tc_sidebar_global_layout];
-            $class_tab  = $class_tab['content'];
-            $tc_screen_layout = array(
-              'sidebar' => $tc_sidebar_global_layout,
-              'class'   => $class_tab
-            );
-            return $tc_screen_layout[$sidebar_or_class];
-          }
-
           //The following lines set the post specific layout if any, and if not keeps the default layout previously defined
           $tc_specific_post_layout    = false;
           global $wp_query;
           //if we are displaying an attachement, we use the parent post/page layout
           if ( $post && 'attachment' == $post -> post_type ) {
-            $tc_specific_post_layout  = esc_attr(get_post_meta( $post->post_parent , $key = 'layout_key' , $single = true ));
+            $tc_specific_post_layout  = esc_attr( get_post_meta( $post->post_parent , $key = 'layout_key' , $single = true ) );
           }
           //for a singular post or page OR for the posts page
           elseif ( is_singular() || $wp_query -> is_posts_page ) {
-            $tc_specific_post_layout  = esc_attr(get_post_meta( $post_id, $key = 'layout_key' , $single = true ));
+            $tc_specific_post_layout  = esc_attr( get_post_meta( $post_id, $key = 'layout_key' , $single = true ) );
           }
 
           //checks if we display home page, either posts or static page and apply the customizer option
@@ -341,8 +469,6 @@ if ( ! class_exists( 'TC_utils' ) ) :
               'class'   => $class_tab
             );
           }
-
-
 
         return apply_filters( 'tc_screen_layout' , $tc_screen_layout[$sidebar_or_class], $post_id , $sidebar_or_class );
       }
@@ -360,7 +486,7 @@ if ( ! class_exists( 'TC_utils' ) ) :
        * @since Customizr 2.0.7
        */
       function tc_fancybox_content_filter( $content) {
-        $tc_fancybox = esc_attr( tc__f( '__get_option' , 'tc_fancybox' ) );
+        $tc_fancybox = esc_attr( TC_utils::$inst->tc_opt( 'tc_fancybox' ) );
 
         if ( 1 != $tc_fancybox )
           return $content;
@@ -371,7 +497,8 @@ if ( ! class_exists( 'TC_utils' ) ) :
 
         $pattern ="/<a(.*?)href=( '|\")(.*?).(bmp|gif|jpeg|jpg|png)( '|\")(.*?)>/i";
         $replacement = '<a$1href=$2$3.$4$5 class="grouped_elements" rel="tc-fancybox-group'.$post -> ID.'"$6>';
-        $content = preg_replace( $pattern, $replacement, $content);
+        $r_content = preg_replace( $pattern, $replacement, $content);
+        $content = $r_content ? $r_content : $content;
         return apply_filters( 'tc_fancybox_content_filter', $content );
       }
 
@@ -418,9 +545,8 @@ if ( ! class_exists( 'TC_utils' ) ) :
       *
       */
       function tc_is_home() {
-
         //get info whether the front page is a list of last posts or a page
-        return ( (is_home() && ( 'posts' == get_option( 'show_on_front' ) || 'nothing' == get_option( 'show_on_front' ) ) ) || is_front_page() ) ? true : false;
+        return ( is_home() && ( 'posts' == get_option( 'show_on_front' ) || 'nothing' == get_option( 'show_on_front' ) ) ) || is_front_page();
       }
 
 
@@ -450,7 +576,7 @@ if ( ! class_exists( 'TC_utils' ) ) :
       function tc_get_post_type() {
         global $post;
 
-        if ( !isset($post) )
+        if ( ! isset($post) )
           return;
 
         return $post -> post_type;
@@ -559,7 +685,9 @@ if ( ! class_exists( 'TC_utils' ) ) :
               //gets height and width from image, we check if getimagesize can be used first with the error control operator
               $width = $height = '';
               if ( isset($data['custom_icon_url']) && @getimagesize($data['custom_icon_url']) ) { list( $width, $height ) = getimagesize($data['custom_icon_url']); }
-
+              $type = isset( $data['type'] ) && ! empty( $data['type'] ) ? $data['type'] : 'url';
+              $link = 'email' == $type ? 'mailto:' : '';
+              $link .=  call_user_func( array( TC_utils_settings_map::$instance, 'tc_sanitize_'.$type ), $__options[$key] );
               //there is one exception : rss feed has no target _blank and special icon title
               $html .= sprintf('<a class="%1$s" href="%2$s" title="%3$s" %4$s %5$s>%6$s</a>',
                   apply_filters( 'tc_social_link_class',
@@ -568,9 +696,9 @@ if ( ! class_exists( 'TC_utils' ) ) :
                                 ),
                                 $key
                   ),
-                  esc_url( $__options[$key]),
+                  $link,
                   isset($data['link_title']) ?  call_user_func( '__' , $data['link_title'] , 'customizr' ) : '' ,
-                  ( $key == 'tc_rss' ) ? '' : apply_filters( 'tc_socials_target', 'target=_blank', $key ),
+                  ( in_array( $key, array('tc_rss', 'tc_email') ) ) ? '' : apply_filters( 'tc_socials_target', 'target=_blank', $key ),
                   apply_filters( 'tc_additional_social_attributes', '' , $key),
                   ( isset($data['custom_icon_url']) && !empty($data['custom_icon_url']) ) ? sprintf('<img src="%1$s" width="%2$s" height="%3$s" alt="%4$s"/>',
                                                           $data['custom_icon_url'],
@@ -585,6 +713,8 @@ if ( ! class_exists( 'TC_utils' ) ) :
       }
 
 
+
+
     /**
     * Retrieve the file type from the file name
     * Even when it's not at the end of the file
@@ -597,6 +727,7 @@ if ( ! class_exists( 'TC_utils' ) ) :
     * @return array Values with extension first and mime type.
     */
     function tc_check_filetype( $filename, $mimes = null ) {
+      $filename = basename( $filename );
       if ( empty($mimes) )
         $mimes = get_allowed_mime_types();
       $type = false;
@@ -614,6 +745,20 @@ if ( ! class_exists( 'TC_utils' ) ) :
       return compact( 'ext', 'type' );
     }
 
+    /**
+    * Check whether a category exists.
+    * (wp category_exists isn't available in pre_get_posts)
+    * @since 3.4.10
+    *
+    * @see term_exists()
+    *
+    * @param int $cat_id.
+    * @return bool
+    */
+    public function tc_category_id_exists( $cat_id ) {
+      return term_exists( (int) $cat_id, 'category');
+    }
+
 
 
     /**
@@ -625,7 +770,7 @@ if ( ! class_exists( 'TC_utils' ) ) :
     * @param date one object.
     * @param date two object.
     */
-    function tc_date_diff( $_date_one , $_date_two ) {
+    private function tc_date_diff( $_date_one , $_date_two ) {
       //if version is at least 5.3.0, use date_diff function
       if ( version_compare( PHP_VERSION, '5.3.0' ) >= 0) {
         return date_diff( $_date_one , $_date_two );
@@ -635,6 +780,70 @@ if ( ! class_exists( 'TC_utils' ) ) :
         return new TC_DateInterval( $_date_two_timestamp - $_date_one_timestamp );
       }
     }
+
+
+
+    /**
+    * Return boolean OR number of days since last update OR PHP version < 5.2
+    *
+    * @package Customizr
+    * @since Customizr 3.2.6
+    */
+    function tc_post_has_update( $_bool = false) {
+      //php version check for DateTime
+      //http://php.net/manual/fr/class.datetime.php
+      if ( version_compare( PHP_VERSION, '5.2.0' ) < 0 )
+        return false;
+
+      //first proceed to a date check
+      $dates_to_check = array(
+        'created'   => get_the_date('Y-m-d g:i:s'),
+        'updated'   => get_the_modified_date('Y-m-d g:i:s'),
+        'current'   => date('Y-m-d g:i:s')
+      );
+      //ALL dates must be valid
+      if ( 1 != array_product( array_map( array($this , 'tc_is_date_valid') , $dates_to_check ) ) )
+        return false;
+
+      //Import variables into the current symbol table
+      extract($dates_to_check);
+
+      //Instantiate the different date objects
+      $created                = new DateTime( $created );
+      $updated                = new DateTime( $updated );
+      $current                = new DateTime( $current );
+
+      $created_to_updated     = $this -> tc_date_diff( $created , $updated );
+      $updated_to_today       = $this -> tc_date_diff( $updated, $current );
+
+      if ( true === $_bool )
+        //return ( 0 == $created_to_updated -> days && 0 == $created_to_updated -> s ) ? false : true;
+        return ( $created_to_updated -> s > 0 || $created_to_updated -> i > 0 ) ? true : false;
+      else
+        //return ( 0 == $created_to_updated -> days && 0 == $created_to_updated -> s ) ? false : $updated_to_today -> days;
+        return ( $created_to_updated -> s > 0 || $created_to_updated -> i > 0 ) ? $updated_to_today -> days : false;
+    }
+
+
+
+    /*
+    * @return boolean
+    * http://stackoverflow.com/questions/11343403/php-exception-handling-on-datetime-object
+    */
+    private function tc_is_date_valid($str) {
+      if ( ! is_string($str) )
+         return false;
+
+      $stamp = strtotime($str);
+      if ( ! is_numeric($stamp) )
+         return false;
+
+      if ( checkdate(date('m', $stamp), date('d', $stamp), date('Y', $stamp)) )
+         return true;
+
+      return false;
+    }
+
 
 
     /**
@@ -691,16 +900,32 @@ if ( ! class_exists( 'TC_utils' ) ) :
     * @package Customizr
     * @since Customizr 3.2.9
     */
-    function tc_user_started_before_version( $_version ) {
-      $_start_version_infos = explode('|', esc_attr( get_transient( 'started_using_customizr' ) ) );
+    function tc_user_started_before_version( $_czr_ver, $_pro_ver = null ) {
+      $_ispro = TC___::tc_is_pro();
+
+      if ( $_ispro && ! get_transient( 'started_using_customizr_pro' ) )
+        return false;
+
+      if ( ! $_ispro && ! get_transient( 'started_using_customizr' ) )
+        return false;
+
+      $_trans = $_ispro ? 'started_using_customizr_pro' : 'started_using_customizr';
+      $_ver   = $_ispro ? $_pro_ver : $_czr_ver;
+      if ( ! $_ver )
+        return false;
+
+      $_start_version_infos = explode('|', esc_attr( get_transient( $_trans ) ) );
+
       if ( ! is_array( $_start_version_infos ) )
         return false;
 
       switch ( $_start_version_infos[0] ) {
+        //in this case with now exactly what was the starting version (most common case)
         case 'with':
-          return version_compare( $_start_version_infos[1] , $_version, '<' );
+          return version_compare( $_start_version_infos[1] , $_ver, '<' );
         break;
-
+        //here the user started to use the theme before, we don't know when.
+        //but this was actually before this check was created
         case 'before':
           return true;
         break;
@@ -710,6 +935,95 @@ if ( ! class_exists( 'TC_utils' ) ) :
         break;
       }
     }
+
+
+    /**
+    * Boolean helper to check if the secondary menu is enabled
+    * since v3.4+
+    */
+    function tc_is_secondary_menu_enabled() {
+      return (bool) esc_attr( TC_utils::$inst->tc_opt( 'tc_display_second_menu' ) ) && 'aside' == esc_attr( TC_utils::$inst->tc_opt( 'tc_menu_style' ) );
+    }
+
+
+
+    /***************************
+    * CTX COMPAT
+    ****************************/
+    /**
+    * Helper : define a set of options not impacted by ctx like tc_slider, last_update_notice.
+    * @return  array of excluded option names
+    */
+    function tc_get_ctx_excluded_options() {
+      return apply_filters(
+        'tc_get_ctx_excluded_options',
+        array(
+          'defaults',
+          'tc_sliders',
+          'tc_blog_restrict_by_cat',
+          'last_update_notice',
+          'last_update_notice_pro'
+        )
+      );
+    }
+
+
+    /**
+    * Boolean helper : tells if this option is excluded from the ctx treatments.
+    * @return bool
+    */
+    function tc_is_option_excluded_from_ctx( $opt_name ) {
+      return in_array( $opt_name, $this -> tc_get_ctx_excluded_options() );
+    }
+
+
+    /**
+    * Returns the url of the customizer with the current url arguments + an optional customizer section args
+    *
+    * @param $autofocus(optional) is an array indicating the elements to focus on ( control,section,panel).
+    * Ex : array( 'control' => 'tc_front_slider', 'section' => 'frontpage_sec').
+    * Wordpress will cycle among autofocus keys focusing the existing element - See wp-admin/customize.php.
+    * The actual focused element depends on its type according to this priority scale: control, section, panel.
+    * In this sense when specifying a control, additional section and panel could be considered as fall-back.
+    *
+    * @param $control_wrapper(optional) is a string indicating the wrapper to apply to the passed control. By default is "tc_theme_options".
+    * Ex: passing $aufocus = array('control' => 'tc_front_slider') will produce the query arg 'autofocus'=>array('control' => 'tc_theme_options[tc_front_slider]'
+    *
+    * @return url string
+    * @since Customizr 3.4+
+    */
+    static function tc_get_customizer_url( $autofocus = null, $control_wrapper = 'tc_theme_options' ) {
+      $_current_url       = ( is_ssl() ? 'https://' : 'http://' ) . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+      $_customize_url     = add_query_arg( 'url', urlencode( $_current_url ), wp_customize_url() );
+      $autofocus  = ( ! is_array($autofocus) || empty($autofocus) ) ? null : $autofocus;
+
+      if ( is_null($autofocus) )
+        return $_customize_url;
+
+      // $autofocus must contain at least one key among (control,section,panel)
+      if ( ! count( array_intersect( array_keys($autofocus), array( 'control', 'section', 'panel') ) ) )
+        return $_customize_url;
+
+      // wrap the control in the $control_wrapper if neded
+      if ( array_key_exists( 'control', $autofocus ) && ! empty( $autofocus['control'] ) && $control_wrapper ){
+        $autofocus['control'] = $control_wrapper . '[' . $autofocus['control'] . ']';
+      }
+      // We don't really have to care for not existent autofocus keys, wordpress will stash them when passing the values to the customize js
+      return add_query_arg( array( 'autofocus' => $autofocus ), $_customize_url );
+    }
+
+
+    /**
+    * Is there a menu assigned to a given location ?
+    * Used in class-header-menu and class-fire-placeholders
+    * @return bool
+    * @since  v3.4+
+    */
+    function tc_has_location_menu( $_location ) {
+      $_all_locations  = get_nav_menu_locations();
+      return isset($_all_locations[$_location]) && is_object( wp_get_nav_menu_object( $_all_locations[$_location] ) );
+    }
+
 
   }//end of class
 endif;

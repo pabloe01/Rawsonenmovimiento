@@ -1,0 +1,42 @@
+msgid ""
+msgstr "MIME-Version: 1.0\n"
+
+#. Name.
+msgid "Fonts"
+msgstr ""
+
+#. Short description.
+msgid "Add More Font Styles &amp; Sizes To Your Visual Editor in WordPress"
+msgstr ""
+
+#. Screenshot description.
+msgid "<p>This is the Font Family menu</p>"
+msgstr ""
+
+#. Screenshot description.
+msgid "<p>This is the Font Sizes menu</p>"
+msgstr ""
+
+#. Found in description list item.
+msgid "A button for Styles"
+msgstr ""
+
+#. Found in description list item.
+msgid "A button for Sizes"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "This plugin adds 2 drop down menus to your visual editor with additional sizes and fonts:"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "New: You can also add your own selection of Google or Custom fonts including premium fonts, to your editor:"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "Add Google fonts http://wpsites.net/wordpress-admin/add-google-web-fonts-to-your-wordpress-editor/"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "Add custom fonts http://wpsites.net/wordpress-themes/add-custom-fonts-to-the-wordpress-editor/"
+msgstr ""

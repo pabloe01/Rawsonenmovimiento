@@ -1,4 +1,17 @@
 
+jQuery('map').load(function () {
+   jQuery('map').imageMapResize(); 
+});
+
+jQuery('Submap').load(function () {
+   jQuery('Submap').imageMapResize(); 
+});
+
+jQuery(function() {
+    jQuery('map').imageMapResize();
+    jQuery('Submap').imageMapResize();
+});
+
 jQuery('map').imageMapResize();
 jQuery('Submap').imageMapResize();
 

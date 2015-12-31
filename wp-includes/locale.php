@@ -86,6 +86,7 @@ class WP_Locale {
 	public $text_direction = 'ltr';
 
 	/**
+	 * The thousands separator and decimal point values used for localizing numbers.
 	 *
 	 * @since 2.3.0
 	 * @access public

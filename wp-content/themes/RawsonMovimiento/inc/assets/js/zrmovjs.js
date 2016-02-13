@@ -1,36 +1,21 @@
 
-jQuery('map').load(function () {
-   jQuery('map').imageMapResize(); 
-});
 
-jQuery('Submap').load(function () {
-   jQuery('Submap').imageMapResize(); 
+
+
+jQuery('Submap').load(function() {
+    jQuery('Submap').imageMapResize();
 });
 
 jQuery(function() {
-    jQuery('map').imageMapResize();
-    jQuery('Submap').imageMapResize();
+    //jQuery('#codemap').html('<map id="Map" name="Map"><area coords="949,789,44" shape="circle" href="#info" onclick="cargaContenido(\'inicio\')" /><area shape="poly" coords="870,808,903,818,922,846,917,882,887,905,842,893,830,871,858,851,870,836,870,812" href="#info" onclick="cargaContenido(\'hotel_italia\')" /><area coords="713,977,47" shape="circle" href="#info" onclick="cargaContenido(\'secundaria_nueva\')" /><area coords="824,819,44" shape="circle" href="#info" onclick="cargaContenido(\'ferrocarril\')" /><area coords="781,910,44" shape="circle" href="#info" onclick="cargaContenido(\'katharsis\')" /><area coords="760,755,44" shape="circle" href="#info" onclick="cargaContenido(\'defensores\')" /><area coords="994,774,1017,768,1035,785,1050,801,1055,824,1043,845,1035,848,1014,844,997,848,977,828,993,807" shape="poly" href="#info" onclick="cargaContenido(\'4esquinas\')" /><area coords="1060,752,44" shape="circle" href="#info" onclick="cargaContenido(\'sarmiento\')"  /><area coords="1199,814,44" shape="circle" href="#info" onclick="cargaContenido(\'escuela11\')" /><area coords="1322,737,44" shape="circle" href="#info" onclick="cargaContenido(\'escuela_media\')" /><area coords="1279,517,44" shape="circle" href="#info" onclick="cargaContenido(\'escuela11\')" /><area coords="1172,559,44" shape="circle" href="#info" onclick="cargaContenido(\'iglesia\')" /><area coords="1096,600,1117,586,1133,583,1153,600,1179,607,1182,638,1173,657,1161,668,1152,674,1143,686,1121,675,1108,668,1114,633" shape="poly" href="#info" onclick="cargaContenido(\'santa_ana\')" /><area coords="1066,638,44" shape="circle" href="#info" onclick="cargaContenido(\'sociedad_italiana\')" /><area coords="1012,886,44" shape="circle" href="#info" onclick="cargaContenido(\'teatro\')" /><area coords="1100,719,1136,707,1170,721,1180,757,1170,777,1146,795,1121,798,1106,789,1100,778,1112,751" shape="poly" href="#info" onclick="cargaContenido(\'mas_de_lo_nuestro\')" /></map>');
+    jQuery('#imgprincipal').load(function() {
+        //jQuery('#codemap').html('<map id="Map" name="Map"> <area coords="949,789,44" shape="circle" href="#mapa" onclick="cargaContenido(\'inicio\')" /><area shape="poly" coords="870,808,903,818,922,846,917,882,887,905,842,893,830,871,858,851,870,836,870,812" href="#mapa" onclick="cargaContenido(\'hotel_italia\')" /><area coords="713,977,47" shape="circle" href="#mapa" onclick="cargaContenido(\'secundaria_nueva\')" /><area coords="824,819,44" shape="circle" href="#mapa" onclick="cargaContenido(\'ferrocarril\')" /><area coords="781,910,44" shape="circle" href="#mapa" onclick="cargaContenido(\'katharsis\')" /><area coords="760,755,44" shape="circle" href="#mapa" onclick="cargaContenido(\'defensores\')" /><area coords="994,774,1017,768,1035,785,1050,801,1055,824,1043,845,1035,848,1014,844,997,848,977,828,993,807" shape="poly" href="#mapa" onclick="cargaContenido(\'4esquinas\')" /><area coords="1060,752,44" shape="circle" href="#mapa" onclick="cargaContenido(\'sarmiento\')"  /><area coords="1199,814,44" shape="circle" href="#mapa" onclick="cargaContenido(\'escuela11\')" /><area coords="1322,737,44" shape="circle" href="#mapa" onclick="cargaContenido(\'escuela_media\')" /><area coords="1279,517,44" shape="circle" href="#mapa" onclick="cargaContenido(\'escuela11\')" /><area coords="1172,559,44" shape="circle" href="#mapa" onclick="cargaContenido(\'iglesia\')" /><area coords="1100,719,1136,707,1170,721,1180,757,1170,777,1146,795,1121,798,1106,789,1100,778,1112,751" shape="poly" href="#mapa" onclick="cargaContenido(\'santa_ana\')" /><area coords="1096,597,1117,583,1133,580,1153,597,1179,604,1182,635,1173,654,1161,665,1152,671,1143,683,1121,672,1108,665,1114,630" shape="poly" href="#mapa" onclick="cargaContenido(\'sociedad_italiana\')" />  <area coords="1066,638,44" shape="circle" href="#info" onclick="cargaContenido(\'teatro\')" />  <area coords="1012,886,44" shape="circle" href="#info" onclick="cargaContenido(\'mas_de_lo_nuestro\')" /></map>');
+        jQuery('#codemap').html('<map id="Map" name="Map"> <area coords="288,239,13" shape="circle" href="#mapa" onclick="cargaContenido(\'inicio\')"><area shape="poly" coords="264,245,274,248,280,257,278,268,269,275,255,271,252,264,260,258,264,254,264,246" href="#mapa" onclick="cargaContenido(\'hotel_italia\')"><area coords="216,297,14" shape="circle" href="#mapa" onclick="cargaContenido(\'secundaria_nueva\')"><area coords="250,249,13" shape="circle" href="#mapa" onclick="cargaContenido(\'ferrocarril\')"><area coords="237,276,13" shape="circle" href="#mapa" onclick="cargaContenido(\'katharsis\')"><area coords="231,229,13" shape="circle" href="#mapa" onclick="cargaContenido(\'defensores\')"><area coords="302,235,309,233,314,238,319,243,320,250,317,256,314,257,308,256,303,257,297,251,301,245" shape="poly" href="#mapa" onclick="cargaContenido(\'4esquinas\')"><area coords="322,228,13" shape="circle" href="#mapa" onclick="cargaContenido(\'sarmiento\')"><area coords="364,247,13" shape="circle" href="#mapa" onclick="cargaContenido(\'escuela11\')"><area coords="401,224,13" shape="circle" href="#mapa" onclick="cargaContenido(\'escuela_media\')"><area coords="388,157,13" shape="circle" href="#mapa" onclick="cargaContenido(\'escuela11\')"><area coords="356,169,13" shape="circle" href="#mapa" onclick="cargaContenido(\'iglesia\')"><area coords="334,218,345,214,355,219,358,230,355,236,348,241,340,242,336,239,334,236,338,228" shape="poly" href="#mapa" onclick="cargaContenido(\'santa_ana\')"><area coords="333,181,339,177,344,176,350,181,358,183,359,193,356,198,352,202,350,204,347,207,340,204,336,202,338,191" shape="poly" href="#mapa" onclick="cargaContenido(\'sociedad_italiana\')">  <area coords="324,194,13" shape="circle" href="#info" onclick="cargaContenido(\'teatro\')">  <area coords="307,269,13" shape="circle" href="#info" onclick="cargaContenido(\'mas_de_lo_nuestro\')"></map>');
+        jQuery('map').imageMapResize();
+    });
+    crear_mapa_img();
 });
 
-jQuery('map').imageMapResize();
-jQuery('Submap').imageMapResize();
-
-jQuery(document).load(function() {
-    jQuery('map').imageMapResize();
-    jQuery('Submap').imageMapResize();
-//jQuery(function(){jQuery(".scroll").click(function(){jQuery("html,body").animate({scrollTop:jQuery("#target").offset().top},"500");return false})})
-});
-
-jQuery(document).ready(function() {
-    jQuery('map').imageMapResize();
-    jQuery('Submap').imageMapResize();
-//jQuery(function(){jQuery(".scroll").click(function(){jQuery("html,body").animate({scrollTop:jQuery("#target").offset().top},"500");return false})})
-});
-
-jQuery("area#imgpopup").click(function(e) {
-    e.preventDefault();
-    PreviewImage(jQuery(this).attr('href'));
-});
 
 PreviewImage = function(uri) {
 
@@ -58,23 +43,100 @@ PreviewImage = function(uri) {
             maxHeight: '80%',
             title: ''
         });
-        //jQuery("..ui-dialog-titlebar").hide();
 
         jQuery("#ui-dialog-title-dialog").hide();
         jQuery(".ui-dialog-titlebar").removeClass('ui-widget-header');
 
-//        jQuery("#idialog .ui-dialog-titlebar").css({
-//            "background-color": "transparent",
-//            "border": "0px none"
-//        });
+    });
+}
+
+function crear_mapa_img() {
+
+    jQuery('#imgpost').load(function() {
+        var cartel = jQuery('#imgpost').attr("alt");
+
+        switch (cartel) {
+            case 'inicial' :
+                jQuery('#codesubmap').html('<map id="SubMap" name="SubMap"> <area id="imgpopup" coords="76,384,307,538" shape="rect" href="Carteles/1 INICIO/Dr Jorge Ilich.jpg" /> <area id="imgpopup" coords="76,201,308,357" shape="rect" href="Carteles/1 INICIO/30 hs de la radio.O.jpg" /> <area id="imgpopup" coords="77,570,308,721" shape="rect" href="Carteles/1 INICIO/hospital.jpg" /> <area id="imgpopup" coords="335,571,562,722" shape="rect" href="Carteles/1 INICIO/personal del hospital.jpg" /> <area id="imgpopup" coords="586,569,818,721" shape="rect" href="Carteles/1 INICIO/primera fiesta de la primavera 1971.jpg" /> <area id="imgpopup" coords="836,569,1068,719" shape="rect" href="Carteles/1 INICIO/Tato Colombo.jpg" /> <area id="imgpopup" coords="758,329,896,532" shape="rect" href="Carteles/1 INICIO/Espíndola.jpg" /> <area id="imgpopup" coords="931,198,1017,327" shape="rect" href="Carteles/1 INICIO/Mariana Casey.jpg" /> <area id="imgpopup" coords="758,203,907,302" shape="rect" href="Carteles/1 INICIO/santiago sanz.png" /> <area id="imgpopup" coords="928,329,1066,539" shape="rect" href="Carteles/1 INICIO/gaucho Pedro Repetto.jpg" /> </map>');
+                break;
+
+            case 'HotelItalia' :
+                jQuery('#codesubmap').html('<map name="SubMap" id="SubMap"><area id="imgpopup" shape="rect" coords="80,22,278,158" href="Carteles/2 HOTEL ITALIA/1-calle Saenz Peña 1923 vista desde Casa del Dr. Baños.jpg" /><area id="imgpopup" shape="rect" coords="78,186,276,322" href="Carteles/2 HOTEL ITALIA/2-calle Saenz Peña 2013 baja.jpg" /><area id="imgpopup" shape="rect" coords="350,20,456,151" href="Carteles/2 HOTEL ITALIA/3-farmacia Rawson  de Ramón Quevedo, actual casa de Teresita Grennon ( año 1926) baja.jpg" /><area id="imgpopup" shape="rect" coords="348,180,552,319" href="Carteles/2 HOTEL ITALIA/4-ExFarmacia Rawson-Tere Grennon baja.jpg" /><area id="imgpopup" shape="rect" coords="599,17,797,153" href="Carteles/2 HOTEL ITALIA/5-Hotel Pacífico.jpg" /><area id="imgpopup" shape="rect" coords="598,183,799,313" href="Carteles/2 HOTEL ITALIA/6-hotel pacifico  foto actual.JPG" /> <area id="imgpopup" shape="rect" coords="819,16,1018,152" href="Carteles/2 HOTEL ITALIA/7- almacen Rossi 1925-1930.jpg" />  <area id="imgpopup" shape="rect" coords="815,185,1017,315" href="Carteles/2 HOTEL ITALIA/8-Almacén Rossi 2015 baja.jpg" />  <area id="imgpopup" shape="rect" coords="79,349,322,519" href="Carteles/2 HOTEL ITALIA/9-tienda Salí baja.jpg" />  <area id="imgpopup" shape="rect" coords="348,350,759,513" href="Carteles/2 HOTEL ITALIA/10-ex-hotel Tenaglia 2015 baja.jpg" />  <area id="imgpopup" shape="rect" coords="74,552,319,714" href="Carteles/2 HOTEL ITALIA/11-casamiento Chiquita Tenaglia-Cacho Sosa.jpg" />  <area id="imgpopup" shape="rect" coords="348,555,591,713" href="Carteles/2 HOTEL ITALIA/12- primer tv en Rawson.jpg" />  <area id="imgpopup" shape="rect" coords="618,550,859,716" href="Carteles/2 HOTEL ITALIA/13-hotel Italia. hombres del barrio.jpg" />  </map>');
+                break;
+
+            case 'SecundariaNueva' :
+                jQuery('#codesubmap').html('<map name="SubMap" id="SubMap"><area id="imgpopup" shape="rect" coords="79,22,335,200" href="Carteles/3-secundaria nueva/1-edifcio donde se inició la Esc. media- 2015-Centro de Jubilados.jpg" />  <area id="imgpopup" shape="rect" coords="346,25,603,196" href="Carteles/3-secundaria nueva/2-Esc. N°2 nueva sede desde 1983 ex esc. 21.jpg" />    <area id="imgpopup" shape="rect" coords="616,26,875,199" href="Carteles/3-secundaria nueva/3- edificio actual de la Esc. Media 2.JPG" /><area id="imgpopup" shape="rect" coords="78,250,258,372" href="Carteles/3-secundaria nueva/4-1986- Bodas de Plata primeros alumnos, primeros profesores.png" /><area id="imgpopup" shape="rect" coords="262,237,376,371" href="Carteles/3-secundaria nueva/5-1986 Bodas de Plata -profesores y alumnos promoción 1979.jpg" /><area id="imgpopup" shape="rect" coords="380,252,562,371" href="Carteles/3-secundaria nueva/6-1986-Bodas de Plata de la escuela .Misa a cargo del padre Peter Davern.jpg" /><area id="imgpopup" shape="rect" coords="568,251,746,373" href="Carteles/3-secundaria nueva/7-1995-de Gala para el Baile de  egresados.jpg" /><area id="imgpopup" shape="rect" coords="754,248,931,373" href="Carteles/3-secundaria nueva/8-1996- personal docente.jpg" /><area id="imgpopup" shape="rect" coords="78,418,282,555" href="Carteles/3-secundaria nueva/9-1996- quinto año.jpg" /><area id="imgpopup" shape="rect" coords="341,397,544,551" href="Carteles/3-secundaria nueva/10-1997-creación del Bachillerato de Adultos de Ciencias Sociales y Gestión y Economía.jpg" /><area id="imgpopup" shape="rect" coords="602,418,805,550" href="Carteles/3-secundaria nueva/11-1997- alumnos del bachillerato.jpg" /><area id="imgpopup" shape="rect" coords="864,416,1070,556" href="Carteles/3-secundaria nueva/12-1997- bachillerato de adultos.jpg" /><area id="imgpopup" shape="rect" coords="77,592,255,708" href="Carteles/3-secundaria nueva/13-1998- viaje a Bariloche.png" /><area id="imgpopup" shape="rect" coords="258,592,437,713" href="Carteles/3-secundaria nueva/14-Nivel terciario primera promoción 2000-2002.png" /><area id="imgpopup" shape="rect" coords="442,592,530,710" href="Carteles/3-secundaria nueva/15-2011-tarjeta 50 aniversario- grupo de alumnos fundadores año 1961.png" /><area id="imgpopup" shape="rect" coords="533,591,682,709" href="Carteles/3-secundaria nueva/16-Dr Norberto Perez, primer director en las bodas de oro de la esc..png" /><area id="imgpopup" shape="rect" coords="687,590,804,712" href="Carteles/3-secundaria nueva/17-personal docente y no docente festejando la reinauguración de la Esc. -2014-.jpg" /><area id="imgpopup" shape="rect" coords="806,609,926,710" href="Carteles/3-secundaria nueva/96345f9e-6746-443b-b182-66589aec84b0.jpg" /></map>');
+                break;
+
+            case 'Ferrocarril' :
+                jQuery('#codesubmap').html('<map name="SubMap" id="SubMap"><area id="imgpopup" shape="rect" coords="79,22,251,146" href="Carteles/4 FERROCARRIL/1- estación en sus inicios-1-3-1885.jpg" /><area id="imgpopup" shape="rect" coords="252,29,425,144" href="Carteles/4 FERROCARRIL/2-estación 1923-el Sr.jpg" /><area id="imgpopup" shape="rect" coords="434,27,669,182" href="Carteles/4 FERROCARRIL/3A-traslado de la virgen de Luján hacia la Estación.jpg" /><area id="imgpopup" shape="rect" coords="436,226,661,387" href="Carteles/4 FERROCARRIL/3-traslado de la imagen de la Virgen de Lujan a la Estación.jpg" /><area id="imgpopup" shape="rect" coords="675,29,859,153" href="Carteles/4 FERROCARRIL/4-puente peatonal emblemático de nuestro pueblo en la  década del 70-.jpg" /><area id="imgpopup" shape="rect" coords="876,31,1058,150" href="Carteles/4 FERROCARRIL/5-construcción del puente.jpg" /><area id="imgpopup" shape="rect" coords="676,191,860,308" href="Carteles/4 FERROCARRIL/6-construcción del puente.jpg" /><area id="imgpopup" shape="rect" coords="877,186,1060,311" href="Carteles/4 FERROCARRIL/7-contrucción del puente.jpg" /><area id="imgpopup" shape="rect" coords="80,196,224,299" href="Carteles/4 FERROCARRIL/8- Garita-2014.JPG" /> <area id="imgpopup" shape="rect" coords="237,204,380,299" href="Carteles/4 FERROCARRIL/8A-talleres ferroviarios.jpg" /> <area id="imgpopup" shape="rect" coords="78,319,222,415" href="Carteles/4 FERROCARRIL/9-garita -palancas de cambios de vías-2014.JPG" /> <area id="imgpopup" shape="rect" coords="236,319,379,414" href="Carteles/4 FERROCARRIL/10-mapa de maniobras 2014.JPG" /> <area id="imgpopup" shape="rect" coords="76,430,268,555" href="Carteles/4 FERROCARRIL/11-reuniones anuales de las familias  ferroviarias.jpg" /> <area id="imgpopup" shape="rect" coords="276,432,464,560" href="Carteles/4 FERROCARRIL/12-Aniversario de la Fraternidad -1944-.jpg" /><area id="imgpopup" shape="rect" coords="467,433,656,555" href="Carteles/4 FERROCARRIL/13-aniversario de la fraternidad- 1945-.jpg" /><area id="imgpopup" shape="rect" coords="660,430,848,555" href="Carteles/4 FERROCARRIL/14-Aniversario de la Fraternidad- 1956-.jpg" /> <area id="imgpopup" shape="rect" coords="77,583,267,709" href="Carteles/4 FERROCARRIL/15- 100 años de la estación-1885-1985-.jpg" /> <area id="imgpopup" shape="rect" coords="269,584,464,709" href="Carteles/4 FERROCARRIL/16-logo aniversario de Rawson en sus 120 años. Autor Ariel Lemme..jpg" /> <area id="imgpopup" shape="rect" coords="465,584,658,713" href="Carteles/4 FERROCARRIL/17-foto actual.jpg" /></map>');
+                break;
+
+            case 'KATHARSIS' :
+                jQuery('#codesubmap').html('<map name="SubMap" id="SubMap"> <area id="imgpopup" shape="rect" coords="35,37,177,135" href="Carteles/5 GIMNASIO KATHARSIS/1-.jpg" /> <area id="imgpopup" shape="rect" coords="183,37,326,133" href="Carteles/5 GIMNASIO KATHARSIS/2-.jpg" /> <area id="imgpopup" shape="rect" coords="331,38,471,131" href="Carteles/5 GIMNASIO KATHARSIS/3-.jpg" /><area id="imgpopup" shape="rect" coords="479,37,621,132" href="Carteles/5 GIMNASIO KATHARSIS/4-.jpg" />  <area id="imgpopup" shape="rect" coords="625,36,770,134" href="Carteles/5 GIMNASIO KATHARSIS/5-.jpg" /><area id="imgpopup" shape="rect" coords="774,36,916,131" href="Carteles/5 GIMNASIO KATHARSIS/6-.jpg" /> <area id="imgpopup" shape="rect" coords="923,35,1069,131" href="Carteles/5 GIMNASIO KATHARSIS/7-.jpg" /> <area id="imgpopup" shape="rect" coords="35,140,175,236" href="Carteles/5 GIMNASIO KATHARSIS/8-.jpg" /> <area id="imgpopup" shape="rect" coords="212,143,355,237" href="Carteles/5 GIMNASIO KATHARSIS/9-.jpg" /> <area id="imgpopup" shape="rect" coords="391,142,534,237" href="Carteles/5 GIMNASIO KATHARSIS/10-.jpg" /> <area id="imgpopup" shape="rect" coords="569,144,713,240" href="Carteles/5 GIMNASIO KATHARSIS/11-.jpg" /> <area id="imgpopup" shape="rect" coords="747,143,890,238" href="Carteles/5 GIMNASIO KATHARSIS/12-.jpg" /><area id="imgpopup" shape="rect" coords="926,141,1068,238" href="Carteles/5 GIMNASIO KATHARSIS/13-.jpg" /> <area id="imgpopup" shape="rect" coords="37,245,176,340" href="Carteles/5 GIMNASIO KATHARSIS/14-.jpg" /><area id="imgpopup" shape="rect" coords="196,248,283,343" href="Carteles/5 GIMNASIO KATHARSIS/15-.jpg" /> <area id="imgpopup" shape="rect" coords="303,248,448,341" href="Carteles/5 GIMNASIO KATHARSIS/16-.jpg" /> <area id="imgpopup" shape="rect" coords="464,246,609,343" href="Carteles/5 GIMNASIO KATHARSIS/17-.jpg" /> <area id="imgpopup" shape="rect" coords="624,247,769,341" href="Carteles/5 GIMNASIO KATHARSIS/18-.jpg" /><area id="imgpopup" shape="rect" coords="786,243,933,340" href="Carteles/5 GIMNASIO KATHARSIS/19-.jpg" /><area id="imgpopup" shape="rect" coords="951,245,1046,341" href="Carteles/5 GIMNASIO KATHARSIS/20-.jpg" /> <area id="imgpopup" shape="rect" coords="39,348,109,450" href="Carteles/5 GIMNASIO KATHARSIS/21-.jpg" /> <area id="imgpopup" shape="rect" coords="141,349,290,447" href="Carteles/5 GIMNASIO KATHARSIS/22-.jpg" /> <area id="imgpopup" shape="rect" coords="324,350,475,447" href="Carteles/5 GIMNASIO KATHARSIS/23-.jpg" /><area id="imgpopup" shape="rect" coords="509,349,656,449" href="Carteles/5 GIMNASIO KATHARSIS/24-.jpg" /><area id="imgpopup" shape="rect" coords="690,349,783,450" href="Carteles/5 GIMNASIO KATHARSIS/25-.jpg" /> <area id="imgpopup" shape="rect" coords="815,347,963,447" href="Carteles/5 GIMNASIO KATHARSIS/26-.jpg" /> <area id="imgpopup" shape="rect" coords="36,468,194,576" href="Carteles/5 GIMNASIO KATHARSIS/27-.jpg" /> <area id="imgpopup" shape="rect" coords="203,468,364,575" href="Carteles/5 GIMNASIO KATHARSIS/28-.jpg" /><area id="imgpopup" shape="rect" coords="371,465,532,573" href="Carteles/5 GIMNASIO KATHARSIS/29-.jpg" /><area id="imgpopup" shape="rect" coords="538,469,700,574" href="Carteles/5 GIMNASIO KATHARSIS/30-.jpg" /><area id="imgpopup" shape="rect" coords="33,590,252,732" href="Carteles/5 GIMNASIO KATHARSIS/31-.jpg" /><area id="imgpopup" shape="rect" coords="260,590,477,734" href="Carteles/5 GIMNASIO KATHARSIS/32-.jpg" /><area id="imgpopup" shape="rect" coords="487,590,701,736" href="Carteles/5 GIMNASIO KATHARSIS/33-.jpg" /></map>');
+                break;
+
+            case 'Defensores' :
+                jQuery('#codesubmap').html('<map name="SubMap" id="SubMap" ><area id="imgpopup" shape="rect" coords="79,18,277,151" href="Carteles/6 esc 21 DEFENSORES/1-.jpg" /><area id="imgpopup" shape="rect" coords="80,195,277,325" href="Carteles/6 esc 21 DEFENSORES/2-.jpg" /><area id="imgpopup" shape="rect" coords="348,19,546,150" href="Carteles/6 esc 21 DEFENSORES/3-.jpg" /><area id="imgpopup" shape="rect" coords="296,194,495,327" href="Carteles/6 esc 21 DEFENSORES/4-.jpg" /><area id="imgpopup" shape="rect" coords="515,194,715,327" href="Carteles/6 esc 21 DEFENSORES/5-.jpg" /><area id="imgpopup" shape="rect" coords="81,381,280,513" href="Carteles/6 esc 21 DEFENSORES/6-.jpg" /><area id="imgpopup" shape="rect" coords="297,379,495,511" href="Carteles/6 esc 21 DEFENSORES/7-.jpg" /><area id="imgpopup" shape="rect" coords="515,382,711,513" href="Carteles/6 esc 21 DEFENSORES/8-.jpg" /><area id="imgpopup" shape="rect" coords="736,381,932,513" href="Carteles/6 esc 21 DEFENSORES/9-.jpg" /><area id="imgpopup" shape="rect" coords="79,561,281,692" href="Carteles/6 esc 21 DEFENSORES/10-.jpg" /><area id="imgpopup" shape="rect" coords="298,562,493,692" href="Carteles/6 esc 21 DEFENSORES/11-.jpg" /><area id="imgpopup" shape="rect" coords="514,563,713,696" href="Carteles/6 esc 21 DEFENSORES/12-.jpg" /><area id="imgpopup" shape="rect" coords="736,565,932,696" href="Carteles/6 esc 21 DEFENSORES/13-.jpg" /><area id="imgpopup" shape="rect" coords="846,18,1043,150" href="Carteles/6 esc 21 DEFENSORES/14-.jpg" /><area id="imgpopup" shape="rect" coords="847,194,1046,326" href="Carteles/6 esc 21 DEFENSORES/15-.jpg" /></map>');
+                break;
+
+            case '4Esquinas' :
+                jQuery('#codesubmap').html('<map name="SubMap" id="SubMap" ><area id="imgpopup" shape="rect" coords="75,31,248,142" href="Carteles/7 ESQUINAS 4/1-.jpg" /><area id="imgpopup" shape="rect" coords="253,28,425,142" href="Carteles/7 ESQUINAS 4/2-.jpg" /><area id="imgpopup" shape="rect" coords="431,27,601,141" href="Carteles/7 ESQUINAS 4/3-.jpg" /> <area id="imgpopup" shape="rect" coords="75,241,271,373" href="Carteles/7 ESQUINAS 4/4-.jpg" /> <area id="imgpopup" shape="rect" coords="278,195,413,371" href="Carteles/7 ESQUINAS 4/5-.jpg" /> <area id="imgpopup" shape="rect" coords="420,243,616,372" href="Carteles/7 ESQUINAS 4/6-.jpg" /> <area id="imgpopup" shape="rect" coords="80,457,380,657" href="Carteles/7 ESQUINAS 4/7-.jpg" /> <area id="imgpopup" shape="rect" coords="388,461,687,660" href="Carteles/7 ESQUINAS 4/8-.jpg" /> <area id="imgpopup" shape="rect" coords="627,27,836,170" href="Carteles/7 ESQUINAS 4/9-.jpg" /> <area id="imgpopup" shape="rect" coords="859,29,1067,167" href="Carteles/7 ESQUINAS 4/10-.jpg" /><area id="imgpopup" shape="rect" coords="656,208,816,408" href="Carteles/7 ESQUINAS 4/11-.jpg" /> <area id="imgpopup" shape="rect" coords="855,210,1075,356" href="Carteles/7 ESQUINAS 4/12-.jpg" /> </map>');
+                break;
+
+            case 'Sarmiento' :
+                jQuery('#codesubmap').html('<map name="SubMap" id="SubMap" ><area id="imgpopup" shape="rect" coords="113,18,260,190" href="Carteles/8 SOC ESPAÑOLA Club Sarmiento/1-.jpg" /><area id="imgpopup" shape="rect" coords="142,229,418,356" href="Carteles/8 SOC ESPAÑOLA Club Sarmiento/2-.jpg" /><area id="imgpopup" shape="rect" coords="287,31,478,179" href="Carteles/8 SOC ESPAÑOLA Club Sarmiento/3-.jpg" /><area id="imgpopup" shape="rect" coords="492,27,683,153" href="Carteles/8 SOC ESPAÑOLA Club Sarmiento/4-.jpg" /><area id="imgpopup" shape="rect" coords="689,29,875,157" href="Carteles/8 SOC ESPAÑOLA Club Sarmiento/5-.jpg" /><area id="imgpopup" shape="rect" coords="885,31,1070,157" href="Carteles/8 SOC ESPAÑOLA Club Sarmiento/6-.jpg" /><area id="imgpopup" shape="rect" coords="491,204,677,331" href="Carteles/8 SOC ESPAÑOLA Club Sarmiento/7-.jpg" /><area id="imgpopup" shape="rect" coords="689,204,877,327" href="Carteles/8 SOC ESPAÑOLA Club Sarmiento/8-.jpg" /><area id="imgpopup" shape="rect" coords="883,202,1073,331" href="Carteles/8 SOC ESPAÑOLA Club Sarmiento/9-.jpg" /><area id="imgpopup" shape="rect" coords="86,401,275,528" href="Carteles/8 SOC ESPAÑOLA Club Sarmiento/10-.jpg" /><area id="imgpopup" shape="rect" coords="90,575,282,703" href="Carteles/8 SOC ESPAÑOLA Club Sarmiento/11-.jpg" /><area id="imgpopup" shape="rect" coords="289,395,438,497" href="Carteles/8 SOC ESPAÑOLA Club Sarmiento/12-.jpg" /><area id="imgpopup" shape="rect" coords="443,398,592,500" href="Carteles/8 SOC ESPAÑOLA Club Sarmiento/13-.jpg" /><area id="imgpopup" shape="rect" coords="599,396,748,498" href="Carteles/8 SOC ESPAÑOLA Club Sarmiento/14-.jpg" /><area id="imgpopup" shape="rect" coords="285,522,432,616" href="Carteles/8 SOC ESPAÑOLA Club Sarmiento/15-.jpg" /><area id="imgpopup" shape="rect" coords="444,518,593,620" href="Carteles/8 SOC ESPAÑOLA Club Sarmiento/16-.jpg" /><area id="imgpopup" shape="rect" coords="603,519,752,621" href="Carteles/8 SOC ESPAÑOLA Club Sarmiento/17-.jpg" /><area id="imgpopup" shape="rect" coords="289,637,434,734" href="Carteles/8 SOC ESPAÑOLA Club Sarmiento/18-.jpg" /><area id="imgpopup" shape="rect" coords="443,637,588,734" href="Carteles/8 SOC ESPAÑOLA Club Sarmiento/19-.jpg" /> </map>');
+                break;
+
+            case 'Escuela11' :
+                jQuery('#codesubmap').html('<map name="SubMap" id="SubMap" > <area id="imgpopup" shape="rect" coords="103,31,237,218" href="Carteles/9 ESCUELA Nº11/1-.jpg" /><area id="imgpopup" shape="rect" coords="289,31,526,217" href="Carteles/9 ESCUELA Nº11/2-.jpg" /> <area id="imgpopup" shape="rect" coords="77,255,276,410" href="Carteles/9 ESCUELA Nº11/3-.jpg" /> <area id="imgpopup" shape="rect" coords="661,29,1050,327" href="Carteles/9 ESCUELA Nº11/5-.jpg" /> <area id="imgpopup" shape="rect" coords="301,257,505,410" href="Carteles/9 ESCUELA Nº11/6-.jpg" /> <area id="imgpopup" shape="rect" coords="82,453,236,565" href="Carteles/9 ESCUELA Nº11/7-.jpg" /> <area id="imgpopup" shape="rect" coords="297,453,450,568" href="Carteles/9 ESCUELA Nº11/8-.jpg" /> <area id="imgpopup" shape="rect" coords="503,417,618,567" href="Carteles/9 ESCUELA Nº11/9-.jpg" /> <area id="imgpopup" shape="rect" coords="666,454,822,567" href="Carteles/9 ESCUELA Nº11/10-.jpg" /> <area id="imgpopup" shape="rect" coords="78,601,230,717" href="Carteles/9 ESCUELA Nº11/11-.jpg" /> <area id="imgpopup" shape="rect" coords="239,601,388,715" href="Carteles/9 ESCUELA Nº11/12-.jpg" /><area id="imgpopup" shape="rect" coords="403,602,551,715" href="Carteles/9 ESCUELA Nº11/13-.jpg" /><area id="imgpopup" shape="rect" coords="562,601,713,713" href="Carteles/9 ESCUELA Nº11/14-.jpg" /><area id="imgpopup" shape="rect" coords="734,600,882,716" href="Carteles/9 ESCUELA Nº11/15-.jpg" /> </map>');
+                break;
+
+            case 'SecundarioInicio' :
+                jQuery('#codesubmap').html('<map name="SubMap" id="SubMap" > <area id="imgpopup" shape="rect" coords="83,41,320,192" href="Carteles/10  SECUNDARIO INICIO/1-.jpg" /> <area id="imgpopup" shape="rect" coords="340,41,573,191" href="Carteles/10  SECUNDARIO INICIO/2-.jpg" /> <area id="imgpopup" shape="rect" coords="587,38,817,185" href="Carteles/10  SECUNDARIO INICIO/3-.jpg" />  <area id="imgpopup" shape="rect" coords="834,42,1065,194" href="Carteles/10  SECUNDARIO INICIO/4-.jpg" /> <area id="imgpopup" shape="rect" coords="83,231,233,401" href="Carteles/10  SECUNDARIO INICIO/5-.jpg" /> <area id="imgpopup" shape="rect" coords="243,274,436,400" href="Carteles/10  SECUNDARIO INICIO/6-.jpg" /> <area id="imgpopup" shape="rect" coords="452,274,643,401" href="Carteles/10  SECUNDARIO INICIO/7-.jpg" /> <area id="imgpopup" shape="rect" coords="659,274,851,398" href="Carteles/10  SECUNDARIO INICIO/8-.jpg" /> <area id="imgpopup" shape="rect" coords="868,271,1060,400" href="Carteles/10  SECUNDARIO INICIO/9-.jpg" /> <area id="imgpopup" shape="rect" coords="102,440,250,555" href="Carteles/10  SECUNDARIO INICIO/10-.jpg" /> <area id="imgpopup" shape="rect" coords="276,440,453,553" href="Carteles/10  SECUNDARIO INICIO/11-.jpg" /> <area id="imgpopup" shape="rect" coords="466,440,642,551" href="Carteles/10  SECUNDARIO INICIO/12-.jpg" /> <area id="imgpopup" shape="rect" coords="658,439,832,556" href="Carteles/10  SECUNDARIO INICIO/13-.jpg" /><area id="imgpopup" shape="rect" coords="89,595,241,702" href="Carteles/10  SECUNDARIO INICIO/14-.jpg" /><area id="imgpopup" shape="rect" coords="251,600,344,702" href="Carteles/10  SECUNDARIO INICIO/15-.jpg" /><area id="imgpopup" shape="rect" coords="352,603,502,701" href="Carteles/10  SECUNDARIO INICIO/16-.jpg" /><area id="imgpopup" shape="rect" coords="513,600,662,702" href="Carteles/10  SECUNDARIO INICIO/17-.jpg" /><area id="imgpopup" shape="rect" coords="674,601,823,699" href="Carteles/10  SECUNDARIO INICIO/18-.jpg" /> </map>');
+                break;
+
+            case 'Parroquia' :
+                jQuery('#codesubmap').html('<map name="SubMap" id="SubMap" ><area id="imgpopup" shape="rect" coords="93,41,196,161" href="Carteles/12 PARROQUIA INM CONCEP/1-.jpg" /><area id="imgpopup" shape="rect" coords="261,40,360,160" href="Carteles/12 PARROQUIA INM CONCEP/2-.jpg" /><area id="imgpopup" shape="rect" coords="389,39,547,163" href="Carteles/12 PARROQUIA INM CONCEP/3-.jpg" /> <area id="imgpopup" shape="rect" coords="578,37,688,161" href="Carteles/12 PARROQUIA INM CONCEP/4-.jpg" /><area id="imgpopup" shape="rect" coords="725,42,882,158" href="Carteles/12 PARROQUIA INM CONCEP/5-.jpg" /> <area id="imgpopup" shape="rect" coords="916,41,1032,161" href="Carteles/12 PARROQUIA INM CONCEP/6-.jpg" /> <area id="imgpopup" shape="rect" coords="91,200,196,321" href="Carteles/12 PARROQUIA INM CONCEP/7-.jpg" /> <area id="imgpopup" shape="rect" coords="249,202,372,320" href="Carteles/12 PARROQUIA INM CONCEP/8-.jpg" /> <area id="imgpopup" shape="rect" coords="396,201,555,321" href="Carteles/12 PARROQUIA INM CONCEP/9-.jpg" /> <area id="imgpopup" shape="rect" coords="588,199,705,320" href="Carteles/12 PARROQUIA INM CONCEP/10-.jpg" /> <area id="imgpopup" shape="rect" coords="730,200,886,322" href="Carteles/12 PARROQUIA INM CONCEP/11-.jpg" /> <area id="imgpopup" shape="rect" coords="894,199,1051,321" href="Carteles/12 PARROQUIA INM CONCEP/12-.jpg" /><area id="imgpopup" shape="rect" coords="67,371,223,493" href="Carteles/12 PARROQUIA INM CONCEP/13-.jpg" /><area id="imgpopup" shape="rect" coords="234,372,390,492" href="Carteles/12 PARROQUIA INM CONCEP/14-.jpg" /><area id="imgpopup" shape="rect" coords="398,371,552,492" href="Carteles/12 PARROQUIA INM CONCEP/15-.jpg" /><area id="imgpopup" shape="rect" coords="559,373,724,491" href="Carteles/12 PARROQUIA INM CONCEP/16-.jpg" /><area id="imgpopup" shape="rect" coords="64,545,250,690" href="Carteles/12 PARROQUIA INM CONCEP/17-.jpg" /><area id="imgpopup" shape="rect" coords="259,548,443,686" href="Carteles/12 PARROQUIA INM CONCEP/18-.jpg" /><area id="imgpopup" shape="rect" coords="483,547,606,685" href="Carteles/12 PARROQUIA INM CONCEP/19-.jpg" /><area id="imgpopup" shape="rect" coords="642,547,826,685" href="Carteles/12 PARROQUIA INM CONCEP/20-.jpg" /> </map>');
+                break;
+
+            case 'SantaAna' :
+                jQuery('#codesubmap').html('<map name="SubMap" id="SubMap" >  <area id="imgpopup" shape="rect" coords="83,37,361,226" href="Carteles/13 COLEGIO SANTA ANA/1-.jpg" />   <area id="imgpopup" shape="rect" coords="523,37,807,227" href="Carteles/13 COLEGIO SANTA ANA/2-.jpg" />   <area id="imgpopup" shape="rect" coords="84,260,273,387" href="Carteles/13 COLEGIO SANTA ANA/3-.jpg" />   <area id="imgpopup" shape="rect" coords="287,259,477,386" href="Carteles/13 COLEGIO SANTA ANA/4-.jpg" />   <area id="imgpopup" shape="rect" coords="495,260,686,386" href="Carteles/13 COLEGIO SANTA ANA/5-.jpg" />  <area id="imgpopup" shape="rect" coords="702,260,893,388" href="Carteles/13 COLEGIO SANTA ANA/6-.jpg" />   <area id="imgpopup" shape="rect" coords="85,419,273,541" href="Carteles/13 COLEGIO SANTA ANA/7-.jpg" /> <area id="imgpopup" shape="rect" coords="289,419,481,547" href="Carteles/13 COLEGIO SANTA ANA/8-.jpg" />   <area id="imgpopup" shape="rect" coords="541,419,638,545" href="Carteles/13 COLEGIO SANTA ANA/9-.jpg" />   <area id="imgpopup" shape="rect" coords="701,417,892,543" href="Carteles/13 COLEGIO SANTA ANA/10-.jpg" />   <area id="imgpopup" shape="rect" coords="112,586,242,713" href="Carteles/13 COLEGIO SANTA ANA/11-.jpg" />   <area id="imgpopup" shape="rect" coords="373,582,563,712" href="Carteles/13 COLEGIO SANTA ANA/12-.jpg" /><area id="imgpopup" shape="rect" coords="652,585,842,708" href="Carteles/13 COLEGIO SANTA ANA/13-.jpg" /> </map>');
+                break;
+
+            case 'SociedadItaliana' :
+                jQuery('#codesubmap').html('<map name="SubMap" id="SubMap" >  <area id="imgpopup" shape="rect" coords="28,62,264,223" href="Carteles/14 SOCIEDAD ITALIANA/1-.jpg" />   <area id="imgpopup" shape="rect" coords="270,65,503,222" href="Carteles/14 SOCIEDAD ITALIANA/2-.jpg" />   <area id="imgpopup" shape="rect" coords="511,32,703,258" href="Carteles/14 SOCIEDAD ITALIANA/3-.jpg" />   <area id="imgpopup" shape="rect" coords="41,343,262,501" href="Carteles/14 SOCIEDAD ITALIANA/4-.jpg" />   <area id="imgpopup" shape="rect" coords="278,344,521,501" href="Carteles/14 SOCIEDAD ITALIANA/5-.jpg" />   <area id="imgpopup" shape="rect" coords="532,342,682,540" href="Carteles/14 SOCIEDAD ITALIANA/6-.jpg" />   <area id="imgpopup" shape="rect" coords="29,602,257,756" href="Carteles/14 SOCIEDAD ITALIANA/7-.jpg" />   <area id="imgpopup" shape="rect" coords="262,604,488,757" href="Carteles/14 SOCIEDAD ITALIANA/8-.jpg" />   <area id="imgpopup" shape="rect" coords="496,604,722,752" href="Carteles/14 SOCIEDAD ITALIANA/9-.jpg" />  </map>');
+                break;
+
+            case 'Teatro' :
+                jQuery('#codesubmap').html('<map name="SubMap" id="SubMap" >  <area id="imgpopup" shape="rect" coords="46,46,257,188" href="Carteles/15 CINE TEATRO/1-.jpg" /><area id="imgpopup" shape="rect" coords="287,15,442,197" href="Carteles/15 CINE TEATRO/2-.jpg" /> <area id="imgpopup" shape="rect" coords="486,48,697,188" href="Carteles/15 CINE TEATRO/3-.jpg" />  <area id="imgpopup" shape="rect" coords="64,226,182,378" href="Carteles/15 CINE TEATRO/4-.jpg" /> <area id="imgpopup" shape="rect" coords="198,251,365,365" href="Carteles/15 CINE TEATRO/5-.jpg" />  <area id="imgpopup" shape="rect" coords="375,251,548,365" href="Carteles/15 CINE TEATRO/6-.jpg" />  <area id="imgpopup" shape="rect" coords="555,252,723,362" href="Carteles/15 CINE TEATRO/7-.jpg" />  <area id="imgpopup" shape="rect" coords="39,424,207,537" href="Carteles/15 CINE TEATRO/8-.jpg" />  <area id="imgpopup" shape="rect" coords="215,424,383,536" href="Carteles/15 CINE TEATRO/9-.jpg" /><area id="imgpopup" shape="rect" coords="386,425,554,537" href="Carteles/15 CINE TEATRO/10-.jpg" /><area id="imgpopup" shape="rect" coords="578,424,708,568" href="Carteles/15 CINE TEATRO/11-.jpg" /><area id="imgpopup" shape="rect" coords="39,599,242,735" href="Carteles/15 CINE TEATRO/12-.jpg" />	<area id="imgpopup" shape="rect" coords="265,599,468,735" href="Carteles/15 CINE TEATRO/13-.jpg" /><area id="imgpopup" shape="rect" coords="515,599,687,813" href="Carteles/15 CINE TEATRO/14-.jpg" /><area id="imgpopup" shape="rect" coords="46,785,395,1020" href="Carteles/15 CINE TEATRO/15-.jpg" />  </map>');
+                break;
+
+            case 'MasDeLoNuestro' :
+                jQuery('#codesubmap').html('<map name="SubMap" id="SubMap" > <area id="imgpopup" shape="rect" coords="46,52,243,180" href="Carteles/16 MAS DE LO NUESTRO/1-.jpg" /> <area id="imgpopup" shape="rect" coords="249,53,446,182" href="Carteles/16 MAS DE LO NUESTRO/2-.jpg" /> <area id="imgpopup" shape="rect" coords="455,52,651,181" href="Carteles/16 MAS DE LO NUESTRO/3-.jpg" /> <area id="imgpopup" shape="rect" coords="660,51,856,181" href="Carteles/16 MAS DE LO NUESTRO/4-.jpg" /> <area id="imgpopup" shape="rect" coords="863,51,1056,182" href="Carteles/16 MAS DE LO NUESTRO/5-.jpg" /> <area id="imgpopup" shape="rect" coords="43,234,245,363" href="Carteles/16 MAS DE LO NUESTRO/6-.jpg" /> <area id="imgpopup" shape="rect" coords="253,233,447,363" href="Carteles/16 MAS DE LO NUESTRO/7-.jpg" /> <area id="imgpopup" shape="rect" coords="454,233,650,362" href="Carteles/16 MAS DE LO NUESTRO/8-.jpg" /> <area id="imgpopup" shape="rect" coords="659,232,852,361" href="Carteles/16 MAS DE LO NUESTRO/9-.jpg" /><area id="imgpopup" shape="rect" coords="863,234,1058,362" href="Carteles/16 MAS DE LO NUESTRO/10-.jpg" /><area id="imgpopup" shape="rect" coords="86,402,203,535" href="Carteles/16 MAS DE LO NUESTRO/11-.jpg" /><area id="imgpopup" shape="rect" coords="247,404,443,533" href="Carteles/16 MAS DE LO NUESTRO/12-.jpg" /><area id="imgpopup" shape="rect" coords="471,404,663,532" href="Carteles/16 MAS DE LO NUESTRO/13-.jpg" /><area id="imgpopup" shape="rect" coords="695,404,889,533" href="Carteles/16 MAS DE LO NUESTRO/14-.jpg" /><area id="imgpopup" shape="rect" coords="47,575,245,707" href="Carteles/16 MAS DE LO NUESTRO/15-.jpg" />	<area id="imgpopup" shape="rect" coords="313,575,511,702" href="Carteles/16 MAS DE LO NUESTRO/15-.jpg" /> </map>');
+                break;
+
+            default:
+                jQuery('#codesubmap').html();
+                break;
+        }
+
+        jQuery("area#imgpopup").click(function(e) {
+            e.preventDefault();
+            PreviewImage(jQuery(this).attr('href'));
+        });
+
+        //jQuery('#codemap').html();
+        jQuery('Submap').imageMapResize();
 
     });
+
 }
 
 function cargaContenido(category) {
 // Coloco un mensaje mientras se reciben los datos
-    jQuery('#' + 'mainpro').removeClass("procesando");
-    jQuery('#' + 'mainpro').addClass("procesando");
+    jQuery('#' + 'content').addClass("fondo_procesando");
+    jQuery('#' + 'logoproc').addClass("logo_procesando gear icon_gear large rotation forward");
     jQuery('#' + 'info').html('');
 
     jQuery.ajax({
@@ -86,21 +148,36 @@ function cargaContenido(category) {
         },
         success: function(results)
         {
+            jQuery('#' + 'info').addClass("border_info");
             jQuery('#' + 'info').html(results);
 
-            jQuery('Submap').imageMapResize();
-            jQuery("area#imgpopup").click(function(e) {
-                e.preventDefault();
-                PreviewImage(jQuery(this).attr('href'));
+            crear_mapa_img();
+
+            jQuery(".gallery-item dt a").each(function(index)
+            {
+
+                jQuery(this).addClass("grouped_elements");
+                jQuery(this).attr("rel", 'tc-fancybox-group');
+
+                jQuery(this).fancybox({
+                    transitionOut: "elastic",
+                    transitionIn: "elastic",
+                    speedIn: 200,
+                    speedOut: 200,
+                    overlayShow: !1,
+                    autoScale: 1 == TCParams.FancyBoxAutoscale ? "true" : "false",
+                    changeFade: "fast",
+                    enableEscapeButton: !0
+                });
+
             });
+            window.location.href = '#info';
 
-            jQuery('#' + 'mainpro').removeClass("procesando");
+            jQuery('#' + 'content').removeClass("fondo_procesando");
+            jQuery('#' + 'logoproc').removeClass("logo_procesando gear icon_gear large rotation forward");
 //            this.scroll(0,1000);
-//            var y = jQuery('#content').scrollTop();
+            var y = jQuery('#entry-content').height();
             jQuery('#content').scrollTop(y + 1000);
-
-
-            //window.location.href = '#div_post';
 
         }
     });

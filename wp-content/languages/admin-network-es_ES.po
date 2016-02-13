@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Network Admin package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2015-11-26 00:00:19+0000\n"
+"PO-Revision-Date: 2016-01-22 11:43:20+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -800,10 +800,6 @@ msgstr "¡Todo hecho!"
 msgid "Logged in users may register new sites."
 msgstr "Solo los usuarios identificados, pueden crear sitios."
 
-#: wp-admin/network/settings.php:138
-msgid "Both sites and user accounts can be registered."
-msgstr "Pueden ser creados sitios y usuarios."
-
 #: wp-admin/network/settings.php:136
 msgid "User accounts may be registered."
 msgstr "Solo las cuentas de usuario pueden ser creadas."
@@ -811,6 +807,10 @@ msgstr "Solo las cuentas de usuario pueden ser creadas."
 #: wp-admin/network/settings.php:135
 msgid "Registration is disabled."
 msgstr "Los registros están deshabilitados."
+
+#: wp-admin/network/settings.php:138
+msgid "Both sites and user accounts can be registered."
+msgstr "Pueden crearse sitios y usuarios."
 
 #: wp-admin/network/settings.php:345
 msgid "Enable administration menus"

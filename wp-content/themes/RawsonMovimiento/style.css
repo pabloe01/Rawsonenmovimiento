@@ -5,7 +5,7 @@
  Author:         Pablo
  Author URI:     http://mysite.com/
  Template:       customizr
- Version:        1.0.0
+ Version:        1.0.1
 */
 
 body {
@@ -52,14 +52,24 @@ hr {
     margin: auto;
 }
 
-.procesando {
-    /*position:absolute;*/
+.fondo_procesando {
+    background-color: whitesmoke;
+    opacity:0.2;
+    filter:alpha(opacity=20);
+    overflow: hidden !important;
+    z-index: 100;    
+}
+
+.logo_procesando {
+    overflow: hidden !important;
+    position:absolute;
     width:100%;
-    height:100%;    
-    background-color: #FFCC00;
-    overflow: hidden;
-    opacity:0.1;
-    filter:alpha(opacity=80)
+    height:100%;
+    background:url(http://www.rawsonenmovimiento.com.ar/wp-content/uploads/2015/12/logo.gif) no-repeat center center;
+    background-size: 15%;
+    left:0px;
+    top:0px;
+    z-index: 101;
 }
 
 .rotation{-webkit-animation-duration:10s;-webkit-animation-iteration-count:infinite;-webkit-animation-timing-function:linear;-moz-animation-duration:10s;-moz-animation-iteration-count:infinite;-moz-animation-timing-function:linear;-o-animation-duration:10s;-o-animation-iteration-count:infinite;-o-animation-timing-function:linear;animation-duration:10s;animation-iteration-count:infinite;animation-timing-function:linear}
@@ -68,10 +78,9 @@ hr {
 @-webkit-keyframes forward_rotation{0%{-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);-o-transform:rotate(0deg);transform:rotate(0deg);}100%{-webkit-transform:rotate(360deg);-moz-transform:rotate(360deg);-o-transform:rotate(360deg);transform:rotate(360deg);}}@-moz-keyframes forward_rotation{0%{-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);-o-transform:rotate(0deg);transform:rotate(0deg);}100%{-webkit-transform:rotate(360deg);-moz-transform:rotate(360deg);-o-transform:rotate(360deg);transform:rotate(360deg);}}@-o-keyframes forward_rotation{0%{-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);-o-transform:rotate(0deg);transform:rotate(0deg);}100%{-webkit-transform:rotate(360deg);-moz-transform:rotate(360deg);-o-transform:rotate(360deg);transform:rotate(360deg);}}@keyframes forward_rotation{0%{-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);-o-transform:rotate(0deg);transform:rotate(0deg);}100%{-webkit-transform:rotate(360deg);-moz-transform:rotate(360deg);-o-transform:rotate(360deg);transform:rotate(360deg);}}
 @-webkit-keyframes backward_rotation{0%{-webkit-transform:rotate(342deg);-moz-transform:rotate(342deg);-o-transform:rotate(342deg);transform:rotate(342deg);}100%{-webkit-transform:rotate(-18deg);-moz-transform:rotate(-18deg);-o-transform:rotate(-18deg);transform:rotate(-18deg);}}@-moz-keyframes backward_rotation{0%{-webkit-transform:rotate(342deg);-moz-transform:rotate(342deg);-o-transform:rotate(342deg);transform:rotate(342deg);}100%{-webkit-transform:rotate(-18deg);-moz-transform:rotate(-18deg);-o-transform:rotate(-18deg);transform:rotate(-18deg);}}@-o-keyframes backward_rotation{0%{-webkit-transform:rotate(342deg);-moz-transform:rotate(342deg);-o-transform:rotate(342deg);transform:rotate(342deg);}100%{-webkit-transform:rotate(-18deg);-moz-transform:rotate(-18deg);-o-transform:rotate(-18deg);transform:rotate(-18deg);}}@keyframes backward_rotation{0%{-webkit-transform:rotate(342deg);-moz-transform:rotate(342deg);-o-transform:rotate(342deg);transform:rotate(342deg);}100%{-webkit-transform:rotate(-18deg);-moz-transform:rotate(-18deg);-o-transform:rotate(-18deg);transform:rotate(-18deg);}}
 
-.icon_gear{background:url(http://www.rawsonenmovimiento.com.ar/wp-content/uploads/2015/12/logo.gif) no-repeat center center;background-size: 100%}
 
 .wrap{position:absolute;width:800px;height:300px;left:50%;top:50%;margin-left:-200px;margin-top:-150px}
-.gear{top:0;right:0}
+/*.gear{top:0;right:0}*/
 #gear1{top:100px}
 #gear2{right:140px;top:10px}
 #gear3{right:230px;top:133px}
@@ -97,20 +106,77 @@ hr {
     -moz-box-shadow: -5px -5px 10px #FFCC00;
     -webkit-box-shadow: -5px -5px 10px #FFCC00;
     box-shadow: -5px -5px 10px #FFCC00;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    -o-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;    
 }
 
 .ui-state-focus{
-/* color: initial !important;
- border: initial !important;
- background: none !important;*/
+    /* color: initial !important;
+     border: initial !important;
+     background: none !important;*/
 }
 
 .ui-button-icon-only .ui-button-text, .ui-button-icons-only .ui-button-text {
-padding: 0px;
-    
+    padding: 0px;
+
 }
 
 .contact {
     width: 320px;
+    /*width: 50%;*/
+    min-width: 320px;
     margin: 0 auto;
+}
+
+.border_info {
+
+    border: 1px solid #A31335 !important;
+    padding-left: 11px;
+    padding-right: 11px;
+    padding-top: 3px;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 5px -5px 10px #A31335;    
+
+}
+
+.marketing h2 {
+    font-weight: 600;
+    color: #A31335;
+    font-family: Andada;
+    font-variant: small-caps;
+}
+
+.entry-title {
+    color: #A31335;
+    font-family: Andada;
+    font-variant: small-caps;    
+}
+
+#footer #calendar_wrap table a, .btt-arrow, footer#footer .colophon a.back-to-top {
+    color: #A31335 !important;
+}
+
+footer#footer {
+    border-top: 8px solid #A31335 !important;
+}
+
+.cform label {
+    border-radius: 3px;
+    background: #F6CE16 none repeat scroll 0%;
+    font-weight: 600;
+}
+.cform legend {
+    display: none
+}
+
+.wp-video {
+    margin: 0 auto !important;
+}
+
+@media (max-width:650px) {
+    .wp-video {
+        width: 100% !important;
+    }
 }

@@ -88,7 +88,7 @@ function my_script_imageMapResizer() {
 }
 
 wp_register_script('Script_imageMapResizer', '/wp-content/themes/RawsonMovimiento/inc/assets/js/imageMapResizer.min.js', '', '1.0', false);
-wp_register_script('Script_ZRawsMov', '/wp-content/themes/RawsonMovimiento/inc/assets/js/zrmovjs.js', '', '1.127', true);
+wp_register_script('Script_ZRawsMov', '/wp-content/themes/RawsonMovimiento/inc/assets/js/zrmovjs.js', '', '1.168', true);
 
 wp_enqueue_script('jquery-ui-dialog');
 wp_enqueue_style('plugin_name-admin-ui-css', 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css', false, PLUGIN_VERSION, false);

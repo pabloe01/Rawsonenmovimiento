@@ -1,0 +1,372 @@
+/*
+* Style Name: Eggplant
+* Style URI: http://
+* Author: Neil Murray
+* Author URI: http://cf7skins.com
+* Description: Primarily white with a dash of purple, Eggplant will make an appealing addition to websites with a variety of themes. Its simplicity and white background makes this style a suitable option for many websites.
+* Instructions:
+* Version: 1.2
+* Version Date: 2015-09-02
+* License: GNU General Public License v2 or later
+* License URI: http://www.gnu.org/licenses/gpl-2.0.html
+* Tags: white, pink, gray, light
+*/
+
+/** Table of Contents
+* Import
+* Resets
+* Form & Controls
+* Fieldset, Legend, Label
+* Text Fields
+* Ordered & Unordered lists
+* Checkboxes, Radio Buttons and Drop Down Menus
+* Other Fields
+* Submit Buttons
+* Special Classes
+* Ready Styles
+* Multi Styles
+*/
+
+/** Import
+NOTE: Use to import other style sheets
+------------------------------------------------------------ */
+/* @import url('../parent/style.css'); */
+
+/** Resets
+NOTE: These are used to reset standard HTML form elements within CF7 forms
+------------------------------------------------------------ */
+.wpcf7 .cf7s-eggplant p {
+}
+
+.wpcf7 .cf7s-eggplant em {
+}
+
+.wpcf7 .cf7s-eggplant a {
+}
+
+/** Form & Controls
+NOTE: These items should be used to style the overall CF7 form
+------------------------------------------------------------ */
+.wpcf7 .cf7s-eggplant {
+	padding: 20px;
+	color: #7f0f7f;
+	border: 1px solid #d056cd;
+	background: #fff;
+}
+
+/** Fieldset, Legend, Label
+------------------------------------------------------------ */
+.wpcf7 .cf7s-eggplant fieldset {
+	margin: 10px 0;
+	padding: 10px 20px;
+	border: 2px solid #d056cd;
+	background: #fff;
+}
+
+.wpcf7 .cf7s-eggplant legend {
+	font-size: 1.2em;
+	padding: 2px 10px;
+	color: #7f0f7f;
+	border: 2px solid #d056cd;
+	background: #fff;
+}
+
+.wpcf7 .cf7s-eggplant label {
+}
+
+.wpcf7 .cf7s-eggplant fieldset p {
+}
+
+.wpcf7 .cf7s-eggplant fieldset fieldset {
+	margin: 10px 0; /* Above CSS overwritten by cf7s-default */
+	background: #f2f2f2;
+}
+
+.wpcf7 .cf7s-eggplant fieldset fieldset legend {
+}
+
+.wpcf7 .wpcf7-form.cf7skins.cf7s-eggplant fieldset fieldset input,
+.wpcf7 .wpcf7-form.cf7skins.cf7s-eggplant fieldset fieldset textarea {
+	background: #fff;
+}
+
+.wpcf7 .cf7s-eggplant fieldset fieldset select {
+	background: #fff;
+}
+
+/** Text Fields
+------------------------------------------------------------ */
+.wpcf7 .wpcf7-form.cf7skins.cf7s-eggplant input,
+.wpcf7 .wpcf7-form.cf7skins.cf7s-eggplant textarea {
+	margin-bottom: 8px;
+	padding: 7px;
+	color: #8f8f8f;
+	border: 1px solid #d056cd;
+	background: #f2f2f2;
+}
+
+.wpcf7 .wpcf7-form.cf7skins.cf7s-eggplant input[type="text"],
+.wpcf7 .wpcf7-form.cf7skins.cf7s-eggplant input[type="email"],
+.wpcf7 .wpcf7-form.cf7skins.cf7s-eggplant input[type="tel"],
+.wpcf7 .wpcf7-form.cf7skins.cf7s-eggplant input[type="url"],
+.wpcf7 .wpcf7-form.cf7skins.cf7s-eggplant input[type="number"],
+.wpcf7 .wpcf7-form.cf7skins.cf7s-eggplant input[type="range"],
+.wpcf7 .wpcf7-form.cf7skins.cf7s-eggplant input[type=date],
+.wpcf7 .wpcf7-form.cf7skins.cf7s-eggplant input[type=file] {
+}
+
+.wpcf7 .wpcf7-form.cf7skins.cf7s-eggplant input[type="text"] {
+}
+
+.wpcf7 .wpcf7-form.cf7skins.cf7s-eggplant input[type="email"] {
+}
+
+.wpcf7 .wpcf7-form.cf7skins.cf7s-eggplant input[type="tel"] {
+}
+
+.wpcf7 .wpcf7-form.cf7skins.cf7s-eggplant textarea {
+	padding: 5px 7px;  /* deliberately different from Input */
+}
+
+/** Ordered & Unordered lists
+------------------------------------------------------------ */
+.wpcf7 .cf7s-eggplant ol,
+.wpcf7 .cf7s-eggplant ul,
+.wpcf7 .cf7s-eggplant li {
+}
+
+.wpcf7 .cf7s-eggplant ol {
+}
+
+.wpcf7 .cf7s-eggplant li {
+	margin-bottom: 5px;
+}
+
+.wpcf7 .cf7s-eggplant li label {
+}
+
+.wpcf7 .cf7s-eggplant .wpcf7-list-item {
+}
+
+.wpcf7 .cf7s-eggplant .wpcf7-list-item-label {
+	margin-right: 7px;
+}
+
+/** Checkboxes, Radio Buttons and Drop Down Menus
+------------------------------------------------------------ */
+.wpcf7 .wpcf7-form.cf7skins.cf7s-eggplant input[type="checkbox"],
+.wpcf7 .wpcf7-form.cf7skins.cf7s-eggplant input[type="radio"] {
+	margin-right: 6px;
+	border: none;
+	background: none;
+}
+
+.wpcf7 .cf7s-eggplant select {
+	margin-bottom: 8px;
+	margin-left: 0;  /* same as Input */
+	padding: 5px;
+	border: 1px solid #d056cd;
+	background: #f2f2f2;
+}
+
+.wpcf7 .cf7s-eggplant select option {
+	padding: 1px 5px;  /* Doesn't work in IE */
+}
+
+.wpcf7 .cf7s-eggplant select option:hover {
+	color: #fff;
+	background: #d056cd;
+}
+
+.wpcf7 .cf7s-eggplant .wpcf7-checkbox .wpcf7-list-item,
+.wpcf7 .cf7s-eggplant .wpcf7-radio .wpcf7-list-item {
+	margin-left: 13px;
+}
+
+/** Other Fields
+NOTE: Use these CSS selectors to style these elements within CF7 forms
+------------------------------------------------------------ */
+
+
+/** Submit Buttons
+NOTE: These are the CSS selectors that should be used to style Submit Buttons within CF7 forms
+------------------------------------------------------------ */
+.wpcf7 .wpcf7-form.cf7skins.cf7s-eggplant input[type="submit"] {
+	padding: 5px 15px;
+	color: #7f0f7f;
+	border: 2px solid #d056cd;
+	background: #f2f2f2;
+}
+
+.wpcf7 .wpcf7-form.cf7skins.cf7s-eggplant input[type="submit"]:hover {
+	background: #fff;
+}
+
+/** Special Classes
+NOTE: Special Classes are classes added in the CF7 Form HTML for a particular form 
+------------------------------------------------------------ */
+
+
+/** Ready Styles
+NOTE: Ready Styles are provided ready to be used in all CF7 forms
+------------------------------------------------------------ */
+.wpcf7 .cf7s-eggplant .singleline {
+}
+
+.wpcf7 .cf7s-eggplant .singleline li {
+}
+
+.wpcf7 .cf7s-eggplant .singleline input {
+}
+
+.wpcf7 .cf7s-eggplant .checkbox-horizontal,
+.wpcf7 .cf7s-eggplant .radio-horizontal {
+}
+
+	.wpcf7 .cf7s-eggplant .box {
+		margin-bottom: 15px;
+		padding: 10px;
+		border: 2px solid #d056cd;
+		background: #f2f2f2;
+	}
+
+.wpcf7 .cf7s-eggplant .boxaround {  /* DELETE */
+	margin-bottom: 15px;
+	padding: 10px;
+	border: 2px solid #d056cd;
+	background: #f2f2f2;
+}
+
+.wpcf7 .cf7s-eggplant .boxaround1 {  /* DELETE */
+	margin-bottom: 15px;
+	padding: 10px;
+	border: 2px solid #d056cd;
+	background: #f2f2f2;
+}
+
+	.wpcf7 .cf7s-eggplant .box select {
+		background: #fff;
+	}
+
+.wpcf7 .cf7s-eggplant .boxaround select {  /* DELETE */
+	background: #fff;
+}
+	
+.wpcf7 .cf7s-eggplant .boxaround1 select {  /* DELETE */
+	background: #fff;
+}
+
+	.wpcf7  .wpcf7-form.cf7skins.cf7s-eggplant .grid-hover [data-row-span] [data-field-span]:hover {
+		background: #ffefff;
+	}
+
+	.wpcf7 .wpcf7-form.cf7skins.cf7s-eggplant .grid-lined {
+		border-top: 1px solid #d056cd;
+	}
+
+	.wpcf7 .wpcf7-form.cf7skins.cf7s-eggplant .grid-lined [data-row-span] {
+		border-bottom: 1px solid #d056cd;
+	}
+	
+	.wpcf7 .wpcf7-form.cf7skins.cf7s-eggplant .grid-lined [data-row-span] [data-field-span] {
+		border-right: 1px solid #d056cd;
+	}
+	
+	.wpcf7 .wpcf7-form.cf7skins.cf7s-eggplant .grid-lined [data-row-span] [data-field-span]:first-child {
+		border-left: 1px solid #d056cd;
+	}
+
+/** Multi Styles
+NOTE: These styles provide styling for CF7 Skins Multi elements
+------------------------------------------------------------ */
+
+/* Multi Fixes */
+.wpcf7 .cf7s-eggplant.cf7multi {
+}
+
+.wpcf7 .cf7s-eggplant.cf7multi .etabs li {
+}
+
+/* Easytabs */
+.wpcf7 .cf7s-eggplant.cf7multi .tab-container {
+}
+
+.wpcf7 .cf7s-eggplant.cf7multi .etabs {
+}
+
+.wpcf7 .cf7s-eggplant.cf7multi .tab {
+	border: 1px solid #d056cd;
+	border-bottom: none;
+	background: #f2f2f2;
+}
+
+.wpcf7 .cf7s-eggplant.cf7multi .tab a {
+	color: #7f0f7f;
+}
+
+.wpcf7 .cf7s-eggplant.cf7multi .tab.active {
+	background: #fff;
+}
+
+.wpcf7 .cf7s-eggplant.cf7multi .tab a.active {
+}
+
+.wpcf7 .cf7s-eggplant.cf7multi .epanels {
+	border: 1px solid #d056cd;
+}
+
+.wpcf7 .cf7s-eggplant.cf7multi .panel-container {
+}
+
+/* Navigation */
+.wpcf7 .cf7s-eggplant.cf7multi .navigation {
+}
+
+.wpcf7 .cf7s-eggplant.cf7multi .navigation .previous,
+.wpcf7 .cf7s-eggplant.cf7multi .navigation .next {
+	color: #7f0f7f;
+	border: 1px solid #d056cd;
+	background: #f2f2f2;
+}
+
+.wpcf7 .cf7s-eggplant.cf7multi .navigation .previous:hover,
+.wpcf7 .cf7s-eggplant.cf7multi .navigation .next:hover {
+}
+
+/* Pagination */
+.wpcf7 .cf7s-eggplant.cf7multi .pagination {
+}
+
+/* Start & End Tabs */
+.wpcf7 .cf7s-eggplant.cf7multi .navigation .start,
+.wpcf7 .wpcf7-form.cf7skins.cf7s-eggplant.cf7multi .navigation .end {
+	padding: 5px 10px;
+	color: #7f0f7f;
+	border: 1px solid #d056cd;
+	background: #f2f2f2;
+}
+
+.wpcf7 .cf7s-eggplant.cf7multi .navigation .start:hover,
+.wpcf7 .wpcf7-form.cf7skins.cf7s-eggplant.cf7multi .navigation .end:hover {
+	background: #fff;
+}
+
+.wpcf7 .wpcf7-form.cf7skins.cf7s-eggplant.cf7multi .navigation .end {
+}
+
+.wpcf7 .wpcf7-form.cf7skins.cf7s-eggplant.cf7multi .navigation .end:hover {
+}
+
+/* Progress Bar */
+.wpcf7 .cf7s-eggplant.cf7multi .cf7m-progress {
+	border: 1px solid #d056cd;
+	background: #f2f2f2;
+}
+
+.wpcf7 .cf7s-eggplant.cf7multi .cf7m-progress div {
+	background: #d056cd;
+}
+
+/* Thank You Tab */
+.wpcf7 .cf7s-eggplant.cf7multi .cf7m-thanks {
+}

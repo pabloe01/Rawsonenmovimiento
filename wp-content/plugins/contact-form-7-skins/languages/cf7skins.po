@@ -1,0 +1,1038 @@
+# Copyright (C) 2013 cf7skins
+# This file is distributed under the same license as the Contact Form 7 Skins package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Contact Form 7 Skins 0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-08-26 20:33+0700\n"
+"PO-Revision-Date: 2015-08-26 20:33+0700\n"
+"Last-Translator: Selz <engineer@selz.com>\n"
+"Language-Team: Neil Murray <nmurray@exemail.com.au>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../index.php:174
+#, php-format
+msgid "<a href=\"%s\">Contact Form 7</a> must be installed to use this plugin."
+msgstr ""
+
+#: ../includes/admin.php:93
+msgid "Loading template..."
+msgstr ""
+
+#: ../includes/admin.php:94
+msgid "Empty filter, please select a filter."
+msgstr ""
+
+#: ../includes/admin.php:95 ../includes/style.php:375
+#: ../includes/style.php:412 ../includes/template.php:384
+#: ../includes/template.php:422
+msgid "Select"
+msgstr ""
+
+#: ../includes/admin.php:96 ../includes/style.php:375
+#: ../includes/style.php:412 ../includes/template.php:384
+#: ../includes/template.php:422
+msgid "Selected"
+msgstr ""
+
+#: ../includes/admin.php:97 ../includes/style.php:422
+#: ../includes/template.php:431
+msgid "Expanded View"
+msgstr ""
+
+#: ../includes/admin.php:113 ../includes/admin.php:136
+msgid "Skins"
+msgstr ""
+
+#: ../includes/admin.php:135
+msgid "Click to toggle"
+msgstr ""
+
+#: ../includes/EDD_SL_Plugin_Updater.php:177
+#, php-format
+msgid ""
+"There is a new version of %1$s available. <a target=\"_blank\" class="
+"\"thickbox\" href=\"%2$s\">View version %3$s details</a>."
+msgstr ""
+
+#: ../includes/EDD_SL_Plugin_Updater.php:184
+#, php-format
+msgid ""
+"There is a new version of %1$s available. <a target=\"_blank\" class="
+"\"thickbox\" href=\"%2$s\">View version %3$s details</a> or <a href=\"%4$s"
+"\">update now</a>."
+msgstr ""
+
+#: ../includes/EDD_SL_Plugin_Updater.php:329
+msgid "You do not have permission to install plugin updates"
+msgstr ""
+
+#: ../includes/EDD_SL_Plugin_Updater.php:329
+msgid "Error"
+msgstr ""
+
+#: ../includes/license.php:35
+msgid "Licenses"
+msgstr ""
+
+#: ../includes/license.php:51
+msgid "Plugin Name"
+msgstr ""
+
+#: ../includes/license.php:52
+msgid "License Key"
+msgstr ""
+
+#: ../includes/license.php:53
+msgid "Site URL"
+msgstr ""
+
+#: ../includes/logs.php:40
+msgid "Logs"
+msgstr ""
+
+#: ../includes/logs.php:54
+msgid "Get Version"
+msgstr ""
+
+#: ../includes/logs.php:60
+msgid "Activation"
+msgstr ""
+
+#: ../includes/logs.php:66
+msgid "Deactivation"
+msgstr ""
+
+#: ../includes/logs.php:102 ../includes/logs.php:129 ../includes/logs.php:181
+msgid "Not available"
+msgstr ""
+
+#: ../includes/settings.php:49
+msgid "General"
+msgstr ""
+
+#: ../includes/settings.php:50
+msgid "Advanced"
+msgstr ""
+
+#: ../includes/settings.php:85
+msgid "Contact Form 7 Skins Settings"
+msgstr ""
+
+#: ../includes/settings.php:102
+msgid "Save Changes"
+msgstr ""
+
+#: ../includes/settings.php:147
+msgid "Color Scheme"
+msgstr ""
+
+#: ../includes/settings.php:150
+msgid "Select color scheme for CF7 Skins interface."
+msgstr ""
+
+#: ../includes/settings.php:169
+msgid "Display Log"
+msgstr ""
+
+#: ../includes/settings.php:172
+msgid "Displays plugin log tab."
+msgstr ""
+
+#: ../includes/settings.php:176
+msgid "Delete Settings"
+msgstr ""
+
+#: ../includes/settings.php:179
+msgid "Remove all plugin data on plugin deletion."
+msgstr ""
+
+#: ../includes/settings.php:312
+msgid "active"
+msgstr ""
+
+#: ../includes/settings.php:313
+msgid "Deactivate License"
+msgstr ""
+
+#: ../includes/settings.php:316
+msgid "invalid"
+msgstr ""
+
+#: ../includes/settings.php:318
+msgid "Activate License"
+msgstr ""
+
+#: ../includes/settings.php:359
+msgid "Default"
+msgstr ""
+
+#: ../includes/settings.php:365
+msgid "Wheat"
+msgstr ""
+
+#: ../includes/settings.php:371
+msgid "Ocean"
+msgstr ""
+
+#: ../includes/style.php:139 ../includes/style.php:220
+#: ../includes/style.php:309
+msgid "Colors"
+msgstr ""
+
+#: ../includes/style.php:140
+msgid "Black"
+msgstr ""
+
+#: ../includes/style.php:141
+msgid "Brown"
+msgstr ""
+
+#: ../includes/style.php:142
+msgid "Gray"
+msgstr ""
+
+#: ../includes/style.php:143
+msgid "Green"
+msgstr ""
+
+#: ../includes/style.php:144
+msgid "Orange"
+msgstr ""
+
+#: ../includes/style.php:145
+msgid "Pink"
+msgstr ""
+
+#: ../includes/style.php:146
+msgid "Purple"
+msgstr ""
+
+#: ../includes/style.php:147
+msgid "Red"
+msgstr ""
+
+#: ../includes/style.php:148
+msgid "Silver"
+msgstr ""
+
+#: ../includes/style.php:149
+msgid "Tan"
+msgstr ""
+
+#: ../includes/style.php:150
+msgid "White"
+msgstr ""
+
+#: ../includes/style.php:151
+msgid "Yellow"
+msgstr ""
+
+#: ../includes/style.php:152
+msgid "Dark"
+msgstr ""
+
+#: ../includes/style.php:153
+msgid "Light"
+msgstr ""
+
+#: ../includes/style.php:156
+msgid "Layout"
+msgstr ""
+
+#: ../includes/style.php:157 ../includes/template.php:175
+msgid "Fixed Layout"
+msgstr ""
+
+#: ../includes/style.php:158 ../includes/template.php:176
+msgid "Fluid Layout"
+msgstr ""
+
+#: ../includes/style.php:159 ../includes/template.php:177
+msgid "Responsive Layout"
+msgstr ""
+
+#: ../includes/style.php:160 ../includes/template.php:178
+msgid "One Column"
+msgstr ""
+
+#: ../includes/style.php:161 ../includes/template.php:179
+msgid "One or Two Column"
+msgstr ""
+
+#: ../includes/style.php:162 ../includes/template.php:180
+msgid "One, Two or Three Column"
+msgstr ""
+
+#: ../includes/style.php:165
+msgid "Features"
+msgstr ""
+
+#: ../includes/style.php:166 ../includes/template.php:184
+msgid "Fieldsets"
+msgstr ""
+
+#: ../includes/style.php:167 ../includes/template.php:185
+msgid "Background"
+msgstr ""
+
+#: ../includes/style.php:168 ../includes/template.php:186
+msgid "Gradients"
+msgstr ""
+
+#: ../includes/style.php:171
+#: ../skins/templates/default/default-cf7-form.php:24
+msgid "Subject"
+msgstr ""
+
+#: ../includes/style.php:172 ../includes/template.php:190
+msgid "Business"
+msgstr ""
+
+#: ../includes/style.php:173 ../includes/template.php:191
+#: ../skins/templates/event/event.php:18
+msgid "Event"
+msgstr ""
+
+#: ../includes/style.php:174 ../includes/template.php:192
+msgid "Holiday"
+msgstr ""
+
+#: ../includes/style.php:175 ../includes/template.php:193
+msgid "Individual"
+msgstr ""
+
+#: ../includes/style.php:176 ../includes/template.php:194
+msgid "Seasonal"
+msgstr ""
+
+#: ../includes/style.php:197 ../includes/style.php:285
+msgid "All available Styles"
+msgstr ""
+
+#: ../includes/style.php:197 ../includes/style.php:285
+#: ../includes/template.php:214 ../includes/template.php:298
+msgid "All"
+msgstr ""
+
+#: ../includes/style.php:198 ../includes/style.php:286
+msgid "Selected by the CF7 Skins team"
+msgstr ""
+
+#: ../includes/style.php:198 ../includes/style.php:286
+#: ../includes/template.php:215 ../includes/template.php:299
+msgid "Featured"
+msgstr ""
+
+#: ../includes/style.php:199 ../includes/style.php:287
+#: ../includes/template.php:216 ../includes/template.php:300
+msgid "Commonly used"
+msgstr ""
+
+#: ../includes/style.php:199 ../includes/style.php:287
+#: ../includes/template.php:216 ../includes/template.php:300
+msgid "Popular"
+msgstr ""
+
+#: ../includes/style.php:200 ../includes/style.php:288
+#: ../includes/template.php:217 ../includes/template.php:301
+msgid "Recently added"
+msgstr ""
+
+#: ../includes/style.php:200 ../includes/style.php:288
+#: ../includes/template.php:217 ../includes/template.php:301
+msgid "Latest"
+msgstr ""
+
+#: ../includes/style.php:206 ../includes/style.php:292
+#: ../includes/template.php:223 ../includes/template.php:305
+msgid "Narrow your choices based on your specific requirements"
+msgstr ""
+
+#: ../includes/style.php:211 ../includes/style.php:302
+msgid ""
+"Check all the boxes that meet your specific requirements and then click "
+"apply filters."
+msgstr ""
+
+#: ../includes/style.php:211 ../includes/style.php:302
+#: ../includes/template.php:228 ../includes/template.php:315
+msgid "Apply Filters"
+msgstr ""
+
+#: ../includes/style.php:212 ../includes/style.php:303
+#: ../includes/template.php:229 ../includes/template.php:316
+msgid "Clear"
+msgstr ""
+
+#: ../includes/style.php:239 ../includes/style.php:327
+#: ../includes/template.php:252 ../includes/template.php:336
+msgid "Filtering by:"
+msgstr ""
+
+#: ../includes/style.php:241 ../includes/style.php:329
+#: ../includes/template.php:254 ../includes/template.php:338
+msgid "Edit"
+msgstr ""
+
+#: ../includes/style.php:246 ../includes/style.php:334
+#: ../includes/template.php:259 ../includes/template.php:342
+msgid ""
+"Sort by Name, Date and License (free or pro) – use arrow to reverse sort "
+"order"
+msgstr ""
+
+#: ../includes/style.php:246 ../includes/style.php:334
+#: ../includes/template.php:259 ../includes/template.php:342
+msgid "Sort by"
+msgstr ""
+
+#: ../includes/style.php:248 ../includes/style.php:336
+#: ../includes/template.php:261 ../includes/template.php:344
+#: ../skins/templates/event/event.php:20
+#: ../skins/templates/fieldset-basic/fieldset-basic.php:20
+#: ../skins/templates/fieldset-in-fieldset/fieldset-in-fieldset.php:20
+#: ../skins/templates/fieldset-multiple/fieldset-multiple.php:20
+#: ../skins/templates/registration/registration.php:20
+msgid "Name"
+msgstr ""
+
+#: ../includes/style.php:249 ../includes/style.php:337
+#: ../includes/template.php:262 ../includes/template.php:345
+msgid "Date"
+msgstr ""
+
+#: ../includes/style.php:250 ../includes/style.php:338
+#: ../includes/template.php:263 ../includes/template.php:346
+msgid "License"
+msgstr ""
+
+#: ../includes/style.php:254 ../includes/style.php:296
+msgid "Search Styles"
+msgstr ""
+
+#: ../includes/style.php:255 ../includes/style.php:297
+msgid "Search styles..."
+msgstr ""
+
+#: ../includes/style.php:391 ../includes/style.php:423
+msgid ""
+"Select to apply the Style to your form - is applied to your form once you "
+"Save."
+msgstr ""
+
+#: ../includes/style.php:392
+msgid ""
+"Show detailed information about this Style - overview of the appearance and "
+"layout with description and usage details."
+msgstr ""
+
+#: ../includes/style.php:392 ../includes/template.php:402
+#: ../skins/templates/suggestion/suggestion.php:24
+msgid "Details"
+msgstr ""
+
+#: ../includes/style.php:422
+msgid ""
+"Use Expanded View to view Styles features - shows all form fields available "
+"in Contact Form 7."
+msgstr ""
+
+#: ../includes/style.php:424
+msgid "Return to Style Gallery/Grid view."
+msgstr ""
+
+#: ../includes/style.php:424 ../includes/style.php:441
+#: ../includes/template.php:433 ../includes/template.php:449
+msgid "Close"
+msgstr ""
+
+#: ../includes/style.php:429 ../includes/style.php:449
+#: ../includes/template.php:438 ../includes/template.php:457
+msgid "Description"
+msgstr ""
+
+#: ../includes/style.php:432 ../includes/style.php:452
+#: ../includes/template.php:441 ../includes/template.php:460
+msgid "Instructions"
+msgstr ""
+
+#: ../includes/style.php:439 ../includes/template.php:447
+msgid "Return to Details View"
+msgstr ""
+
+#: ../includes/style.php:439 ../includes/template.php:447
+msgid "Details View"
+msgstr ""
+
+#: ../includes/style.php:440
+msgid ""
+"Select to apply the Style to your form - is applied to your form once you "
+"Save"
+msgstr ""
+
+#: ../includes/style.php:441
+msgid "Return to Style Gallery/Grid View"
+msgstr ""
+
+#: ../includes/tab.php:30 ../includes/tab.php:226
+msgid "Template"
+msgstr ""
+
+#: ../includes/tab.php:31 ../includes/tab.php:234
+msgid "Style"
+msgstr ""
+
+#: ../includes/tab.php:126
+msgid "No templates found. Try a different search."
+msgstr ""
+
+#: ../includes/tab.php:202
+msgid "No styles found. Try a different search."
+msgstr ""
+
+#: ../includes/tab.php:227
+msgid ""
+"Each Template acts as an easy to follow guide, which can be adapted to your "
+"requirements"
+msgstr ""
+
+#: ../includes/tab.php:228
+msgid ""
+"Choose a Template for your form – then you can add, copy or remove fields to "
+"match your requirements."
+msgstr ""
+
+#: ../includes/tab.php:235
+msgid ""
+"Each Style covers the full range of standard form elements available within "
+"Contact Form 7"
+msgstr ""
+
+#: ../includes/tab.php:236
+msgid ""
+"You can change the Style applied to your form by simply selecting a "
+"different Style"
+msgstr ""
+
+#: ../includes/tab.php:243
+msgid "!"
+msgstr ""
+
+#: ../includes/tab.php:244 ../includes/tab.php:311
+msgid "?"
+msgstr ""
+
+#: ../includes/tab.php:283
+msgid "Documentation"
+msgstr ""
+
+#: ../includes/tab.php:284
+msgid "FAQ"
+msgstr ""
+
+#: ../includes/tab.php:285
+msgid "Tutorials"
+msgstr ""
+
+#: ../includes/tab.php:286
+msgid "Knowledge Base"
+msgstr ""
+
+#: ../includes/tab.php:298
+msgid "Support"
+msgstr ""
+
+#: ../includes/tab.php:299
+msgid "Blog"
+msgstr ""
+
+#: ../includes/tab.php:300
+msgid "Pro Version"
+msgstr ""
+
+#: ../includes/template.php:214 ../includes/template.php:298
+msgid "All available Templates"
+msgstr ""
+
+#: ../includes/template.php:215 ../includes/template.php:299
+msgid "Selected by CF7 Skins Team"
+msgstr ""
+
+#: ../includes/template.php:223 ../includes/template.php:305
+msgid "Feature Filter"
+msgstr ""
+
+#: ../includes/template.php:267 ../includes/template.php:309
+msgid "Search Templates"
+msgstr ""
+
+#: ../includes/template.php:268 ../includes/template.php:310
+msgid "Search templates..."
+msgstr ""
+
+#: ../includes/template.php:401
+msgid ""
+"Select to apply the Template to your form - appears in the form editing "
+"area, where you can edit your requirements."
+msgstr ""
+
+#: ../includes/template.php:402
+msgid ""
+"Show detailed information about this Template, with layout, description and "
+"usage details."
+msgstr ""
+
+#: ../includes/template.php:431
+msgid ""
+"Use Expanded View to view Template features - shows layout, description & "
+"usage details."
+msgstr ""
+
+#: ../includes/template.php:432
+msgid ""
+"Select to apply the Template to your form - appears in the Form Editing "
+"area, where you can edit to your requirements."
+msgstr ""
+
+#: ../includes/template.php:433
+msgid "Return to Template Gallery/Grid view."
+msgstr ""
+
+#: ../includes/template.php:448
+msgid ""
+"Select to apply the Template to your form - appears in the Form editing "
+"area, where you can edit to your requirements."
+msgstr ""
+
+#: ../includes/template.php:449
+msgid "Return to Template Gallery/ Grid View"
+msgstr ""
+
+#: ../skins/templates/contact/contact.php:18
+msgid "Contact Form"
+msgstr ""
+
+#: ../skins/templates/contact/contact.php:20
+#: ../skins/templates/default/default-cf7-form.php:18
+msgid "Your Name (required)"
+msgstr ""
+
+#: ../skins/templates/contact/contact.php:21
+msgid "Email Address (required)"
+msgstr ""
+
+#: ../skins/templates/contact/contact.php:22
+#: ../skins/templates/default/default-cf7-form.php:27
+msgid "Your Message"
+msgstr ""
+
+#: ../skins/templates/contact/contact.php:24
+#: ../skins/templates/event/event.php:28
+#: ../skins/templates/fieldset-basic/fieldset-basic.php:25
+#: ../skins/templates/fieldset-in-fieldset/fieldset-in-fieldset.php:34
+#: ../skins/templates/fieldset-multiple/fieldset-multiple.php:35
+#: ../skins/templates/registration/registration.php:31
+#: ../skins/templates/suggestion/suggestion.php:29
+#: ../skins/templates/survey/survey.php:30
+msgid "Submit"
+msgstr ""
+
+#: ../skins/templates/contact/contact.php:25
+#: ../skins/templates/event/event.php:29
+#: ../skins/templates/fieldset-basic/fieldset-basic.php:26
+#: ../skins/templates/fieldset-in-fieldset/fieldset-in-fieldset.php:35
+#: ../skins/templates/fieldset-multiple/fieldset-multiple.php:36
+msgid "Required"
+msgstr ""
+
+#: ../skins/templates/default/default-cf7-form.php:21
+msgid "Your Email (required)"
+msgstr ""
+
+#: ../skins/templates/default/default-cf7-form.php:30
+msgid "Send"
+msgstr ""
+
+#: ../skins/templates/event/event.php:21
+#: ../skins/templates/registration/registration.php:24
+msgid "Phone Number"
+msgstr ""
+
+#: ../skins/templates/event/event.php:22
+#: ../skins/templates/fieldset-basic/fieldset-basic.php:21
+#: ../skins/templates/fieldset-in-fieldset/fieldset-in-fieldset.php:21
+#: ../skins/templates/fieldset-multiple/fieldset-multiple.php:21
+#: ../skins/templates/registration/registration.php:25
+#: ../skins/templates/registration/registration.php:27
+msgid "Email"
+msgstr ""
+
+#: ../skins/templates/event/event.php:23
+msgid "Which workshops will you be attending?"
+msgstr ""
+
+#: ../skins/templates/event/event.php:23 ../skins/templates/event/event.php:25
+#: ../skins/templates/fieldset-in-fieldset/fieldset-in-fieldset.php:29
+#: ../skins/templates/fieldset-multiple/fieldset-multiple.php:30
+#: ../skins/templates/registration/registration.php:28
+#: ../skins/templates/registration/registration.php:29
+#: ../skins/templates/suggestion/suggestion.php:26
+#: ../skins/templates/suggestion/suggestion.php:27
+msgid "Option 1"
+msgstr ""
+
+#: ../skins/templates/event/event.php:23 ../skins/templates/event/event.php:25
+#: ../skins/templates/fieldset-in-fieldset/fieldset-in-fieldset.php:29
+#: ../skins/templates/fieldset-multiple/fieldset-multiple.php:30
+#: ../skins/templates/registration/registration.php:28
+#: ../skins/templates/registration/registration.php:29
+#: ../skins/templates/suggestion/suggestion.php:26
+#: ../skins/templates/suggestion/suggestion.php:27
+msgid "Option 2"
+msgstr ""
+
+#: ../skins/templates/event/event.php:23 ../skins/templates/event/event.php:25
+#: ../skins/templates/fieldset-in-fieldset/fieldset-in-fieldset.php:29
+#: ../skins/templates/fieldset-multiple/fieldset-multiple.php:30
+#: ../skins/templates/registration/registration.php:28
+#: ../skins/templates/registration/registration.php:29
+#: ../skins/templates/suggestion/suggestion.php:26
+#: ../skins/templates/suggestion/suggestion.php:27
+msgid "Option 3"
+msgstr ""
+
+#: ../skins/templates/event/event.php:24
+msgid "Are you an existing customer?"
+msgstr ""
+
+#: ../skins/templates/event/event.php:24
+#: ../skins/templates/fieldset-in-fieldset/fieldset-in-fieldset.php:30
+#: ../skins/templates/fieldset-multiple/fieldset-multiple.php:31
+msgid "Yes"
+msgstr ""
+
+#: ../skins/templates/event/event.php:24
+#: ../skins/templates/fieldset-in-fieldset/fieldset-in-fieldset.php:30
+#: ../skins/templates/fieldset-multiple/fieldset-multiple.php:31
+msgid "No"
+msgstr ""
+
+#: ../skins/templates/event/event.php:25
+msgid "How did find out about this event?"
+msgstr ""
+
+#: ../skins/templates/event/event.php:26
+msgid "Comments or Questions"
+msgstr ""
+
+#: ../skins/templates/fieldset-basic/fieldset-basic.php:18
+#: ../skins/templates/fieldset-in-fieldset/fieldset-in-fieldset.php:18
+#: ../skins/templates/fieldset-multiple/fieldset-multiple.php:18
+msgid "Your Details"
+msgstr ""
+
+#: ../skins/templates/fieldset-basic/fieldset-basic.php:22
+#: ../skins/templates/fieldset-in-fieldset/fieldset-in-fieldset.php:22
+#: ../skins/templates/fieldset-multiple/fieldset-multiple.php:22
+#: ../skins/templates/registration/registration.php:27
+msgid "Phone"
+msgstr ""
+
+#: ../skins/templates/fieldset-basic/fieldset-basic.php:23
+#: ../skins/templates/fieldset-in-fieldset/fieldset-in-fieldset.php:23
+#: ../skins/templates/fieldset-multiple/fieldset-multiple.php:23
+#: ../skins/templates/registration/registration.php:26
+msgid "Message"
+msgstr ""
+
+#: ../skins/templates/fieldset-in-fieldset/fieldset-in-fieldset.php:27
+#: ../skins/templates/fieldset-multiple/fieldset-multiple.php:28
+msgid "Your Requirements"
+msgstr ""
+
+#: ../skins/templates/fieldset-in-fieldset/fieldset-in-fieldset.php:29
+#: ../skins/templates/fieldset-multiple/fieldset-multiple.php:30
+#: ../skins/templates/registration/registration.php:29
+#: ../skins/templates/suggestion/suggestion.php:27
+msgid "Checkboxes"
+msgstr ""
+
+#: ../skins/templates/fieldset-in-fieldset/fieldset-in-fieldset.php:30
+#: ../skins/templates/fieldset-multiple/fieldset-multiple.php:31
+msgid "Radio Buttons"
+msgstr ""
+
+#: ../skins/templates/fieldset-in-fieldset/fieldset-in-fieldset.php:31
+#: ../skins/templates/fieldset-multiple/fieldset-multiple.php:32
+msgid "Dropdown Select"
+msgstr ""
+
+#: ../skins/templates/fieldset-in-fieldset/fieldset-in-fieldset.php:31
+#: ../skins/templates/fieldset-multiple/fieldset-multiple.php:32
+msgid "Item 1"
+msgstr ""
+
+#: ../skins/templates/fieldset-in-fieldset/fieldset-in-fieldset.php:31
+#: ../skins/templates/fieldset-multiple/fieldset-multiple.php:32
+msgid "Item 2"
+msgstr ""
+
+#: ../skins/templates/fieldset-in-fieldset/fieldset-in-fieldset.php:31
+#: ../skins/templates/fieldset-multiple/fieldset-multiple.php:32
+msgid "Item 3"
+msgstr ""
+
+#: ../skins/templates/registration/registration.php:18
+msgid "Registration"
+msgstr ""
+
+#: ../skins/templates/registration/registration.php:21
+msgid "Address"
+msgstr ""
+
+#: ../skins/templates/registration/registration.php:22
+msgid "City"
+msgstr ""
+
+#: ../skins/templates/registration/registration.php:23
+msgid "State / Province / Region"
+msgstr ""
+
+#: ../skins/templates/registration/registration.php:27
+msgid "Preferred Contact Method"
+msgstr ""
+
+#: ../skins/templates/registration/registration.php:28
+msgid "Drop-down menu"
+msgstr ""
+
+#: ../skins/templates/suggestion/suggestion.php:18
+msgid "Suggestion Form"
+msgstr ""
+
+#: ../skins/templates/suggestion/suggestion.php:19
+msgid "Please let us know what you think."
+msgstr ""
+
+#: ../skins/templates/suggestion/suggestion.php:21
+msgid "In which of the following areas do you have a suggestion?"
+msgstr ""
+
+#: ../skins/templates/suggestion/suggestion.php:21
+msgid "Area 1"
+msgstr ""
+
+#: ../skins/templates/suggestion/suggestion.php:21
+msgid "Area 2"
+msgstr ""
+
+#: ../skins/templates/suggestion/suggestion.php:21
+msgid "Area 3"
+msgstr ""
+
+#: ../skins/templates/suggestion/suggestion.php:21
+msgid "Area 4"
+msgstr ""
+
+#: ../skins/templates/suggestion/suggestion.php:22
+msgid "Note: You can select multiple items (Use Shift or Ctrl/Cmd + Click)"
+msgstr ""
+
+#: ../skins/templates/suggestion/suggestion.php:23
+msgid "Suggestion"
+msgstr ""
+
+#: ../skins/templates/suggestion/suggestion.php:25
+msgid ""
+"Your Email - please enter your email if you would like us to follow up with "
+"you."
+msgstr ""
+
+#: ../skins/templates/suggestion/suggestion.php:26
+msgid "Radio buttons"
+msgstr ""
+
+#: ../skins/templates/survey/survey.php:18
+msgid "Survey Form"
+msgstr ""
+
+#: ../skins/templates/survey/survey.php:21
+msgid "Overall, how satisfied are you with our product / service?"
+msgstr ""
+
+#: ../skins/templates/survey/survey.php:21
+msgid "Very Satisfied"
+msgstr ""
+
+#: ../skins/templates/survey/survey.php:21
+msgid "Satisfied"
+msgstr ""
+
+#: ../skins/templates/survey/survey.php:21
+#: ../skins/templates/survey/survey.php:26
+msgid "Neutral"
+msgstr ""
+
+#: ../skins/templates/survey/survey.php:21
+msgid "Unsatisfied"
+msgstr ""
+
+#: ../skins/templates/survey/survey.php:21
+msgid "Very Unsatisfied"
+msgstr ""
+
+#: ../skins/templates/survey/survey.php:22
+msgid "Would you recommend our product / service to others?"
+msgstr ""
+
+#: ../skins/templates/survey/survey.php:22
+msgid "Definitely"
+msgstr ""
+
+#: ../skins/templates/survey/survey.php:22
+msgid "Probably"
+msgstr ""
+
+#: ../skins/templates/survey/survey.php:22
+msgid "Not Sure"
+msgstr ""
+
+#: ../skins/templates/survey/survey.php:22
+msgid "Probably Not"
+msgstr ""
+
+#: ../skins/templates/survey/survey.php:22
+msgid "Definitely Not"
+msgstr ""
+
+#: ../skins/templates/survey/survey.php:23
+msgid "How long have you used our product / service?"
+msgstr ""
+
+#: ../skins/templates/survey/survey.php:23
+msgid "Less than a month"
+msgstr ""
+
+#: ../skins/templates/survey/survey.php:23
+msgid "1-6 months"
+msgstr ""
+
+#: ../skins/templates/survey/survey.php:23
+msgid "1-3 years"
+msgstr ""
+
+#: ../skins/templates/survey/survey.php:23
+msgid "Over 3 Years"
+msgstr ""
+
+#: ../skins/templates/survey/survey.php:23
+msgid "Never used"
+msgstr ""
+
+#: ../skins/templates/survey/survey.php:24
+msgid "How often do you use our product / service?"
+msgstr ""
+
+#: ../skins/templates/survey/survey.php:24
+msgid "Once a week"
+msgstr ""
+
+#: ../skins/templates/survey/survey.php:24
+msgid "2 to 3 times a month"
+msgstr ""
+
+#: ../skins/templates/survey/survey.php:24
+msgid "Once a month"
+msgstr ""
+
+#: ../skins/templates/survey/survey.php:24
+msgid "Less than once a month"
+msgstr ""
+
+#: ../skins/templates/survey/survey.php:25
+msgid "What aspect of the product / service were you most satisfied by?"
+msgstr ""
+
+#: ../skins/templates/survey/survey.php:25
+msgid "Quality"
+msgstr ""
+
+#: ../skins/templates/survey/survey.php:25
+msgid "Price"
+msgstr ""
+
+#: ../skins/templates/survey/survey.php:25
+msgid "Purchase Experience"
+msgstr ""
+
+#: ../skins/templates/survey/survey.php:25
+msgid "Usage Experience"
+msgstr ""
+
+#: ../skins/templates/survey/survey.php:25
+msgid "Customer Service"
+msgstr ""
+
+#: ../skins/templates/survey/survey.php:26
+msgid "Overall, the product / service met my expectations?"
+msgstr ""
+
+#: ../skins/templates/survey/survey.php:26
+msgid "Strongly Agree"
+msgstr ""
+
+#: ../skins/templates/survey/survey.php:26
+msgid "Agree"
+msgstr ""
+
+#: ../skins/templates/survey/survey.php:26
+msgid "Disagree"
+msgstr ""
+
+#: ../skins/templates/survey/survey.php:26
+msgid "Strongly Disagree"
+msgstr ""
+
+#: ../skins/templates/survey/survey.php:26
+#: ../skins/templates/survey/survey.php:28
+msgid "Don't Know"
+msgstr ""
+
+#: ../skins/templates/survey/survey.php:27
+msgid "What do you like about the product / service?"
+msgstr ""
+
+#: ../skins/templates/survey/survey.php:28
+msgid ""
+"Thinking of similar products / services offered by others, how would you "
+"compare the product / service offered by us?"
+msgstr ""
+
+#: ../skins/templates/survey/survey.php:28
+msgid "Much Better"
+msgstr ""
+
+#: ../skins/templates/survey/survey.php:28
+msgid "Somewhat Better"
+msgstr ""
+
+#: ../skins/templates/survey/survey.php:28
+msgid "About the Same"
+msgstr ""
+
+#: ../skins/templates/survey/survey.php:28
+msgid "Somewhat Worse"
+msgstr ""
+
+#: ../skins/templates/survey/survey.php:28
+msgid "Much Worse"
+msgstr ""

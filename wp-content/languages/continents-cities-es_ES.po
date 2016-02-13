@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Continents & Cities package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2013-08-01 18:48:42+0000\n"
+"PO-Revision-Date: 2015-12-29 10:06:29+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -593,10 +593,6 @@ msgstr "Pontianak"
 #: wp-admin/includes/continents-cities.php:288
 msgid "Pyongyang"
 msgstr "Pyongyang"
-
-#: wp-admin/includes/continents-cities.php:289
-msgid "Qatar"
-msgstr "Qatar"
 
 #: wp-admin/includes/continents-cities.php:290
 msgid "Qyzylorda"
@@ -1445,6 +1441,10 @@ msgstr "Kaliningrado"
 #: wp-admin/includes/continents-cities.php:466
 msgid "Fiji"
 msgstr "Fiyi"
+
+#: wp-admin/includes/continents-cities.php:289
+msgid "Qatar"
+msgstr "Catar"
 
 #: wp-admin/includes/continents-cities.php:41
 msgid "Kigali"

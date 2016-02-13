@@ -1,0 +1,370 @@
+/*
+* Style Name: Choc Shake
+* Style URI: http://
+* Author: Neil Murray
+* Author URI: http://cf7skins.com
+* Description:  This delicious style will work well with a range of different backgrounds, drawing in attention with its smooth and clean styling.
+* Instructions:
+* Version: 1.2
+* Version Date: 2015-09-02
+* License: GNU General Public License v2 or later
+* License URI: http://www.gnu.org/licenses/gpl-2.0.html
+* Tags: brown, white, light
+*/
+
+/** Table of Contents
+* Import
+* Resets
+* Form & Controls
+* Fieldset, Legend, Label
+* Text Fields
+* Ordered & Unordered lists
+* Checkboxes, Radio Buttons and Drop Down Menus
+* Other Fields
+* Submit Buttons
+* Special Classes
+* Ready Styles
+* Multi Styles
+*/
+
+/** Import
+NOTE: Use to import other style sheets
+------------------------------------------------------------ */
+/* @import url('../parent/style.css'); */
+
+/** Resets
+NOTE: These are used to reset standard HTML form elements within CF7 forms
+------------------------------------------------------------ */
+.wpcf7 .cf7s-choc-shake p {
+}
+
+.wpcf7 .cf7s-choc-shake em {
+}
+
+.wpcf7 .cf7s-choc-shake a {
+}
+
+/** Form & Controls
+NOTE: These items should be used to style the overall CF7 form
+------------------------------------------------------------ */
+.wpcf7 .cf7s-choc-shake {
+	padding: 20px;
+	color: #866c4a;
+	border: 1px solid #c9b3a0;
+	background: #fff;
+}
+
+/** Fieldset, Legend, Label
+------------------------------------------------------------ */
+.wpcf7 .cf7s-choc-shake fieldset {
+	margin: 10px 0;
+	padding: 10px 25px;
+	border: 1px solid #c9b3a0;
+	background: #e1cfbf;
+}
+
+.wpcf7 .cf7s-choc-shake legend {
+	font-size: 1.2em;
+	padding: 3px 20px;
+	color: #fff;
+	border: 1px solid #c9b3a0;	
+	background: #bca17d;
+}
+
+.wpcf7 .cf7s-choc-shake label {
+}
+
+.wpcf7 .cf7s-choc-shake fieldset p {
+}
+
+.wpcf7 .cf7s-choc-shake fieldset fieldset {
+	margin: 10px 0; /* Above CSS overwritten by cf7s-default */
+	background: #ccb7a4;
+}
+
+.wpcf7 .cf7s-choc-shake fieldset fieldset legend {
+}
+
+.wpcf7 .wpcf7-form.cf7skins.cf7s-choc-shake fieldset fieldset input,
+.wpcf7 .wpcf7-form.cf7skins.cf7s-choc-shake fieldset fieldset textarea {
+}
+
+/** Text Fields
+------------------------------------------------------------ */
+.wpcf7 .wpcf7-form.cf7skins.cf7s-choc-shake input,
+.wpcf7 .wpcf7-form.cf7skins.cf7s-choc-shake textarea {
+	margin-bottom: 8px;
+	padding: 7px;
+	color: #fff;
+	border: 1px solid #bfa48e;
+	background: #dec29d;
+}
+
+.wpcf7 .wpcf7-form.cf7skins.cf7s-choc-shake input[type="text"],
+.wpcf7 .wpcf7-form.cf7skins.cf7s-choc-shake input[type="email"],
+.wpcf7 .wpcf7-form.cf7skins.cf7s-choc-shake input[type="tel"],
+.wpcf7 .wpcf7-form.cf7skins.cf7s-choc-shake input[type="url"],
+.wpcf7 .wpcf7-form.cf7skins.cf7s-choc-shake input[type="number"],
+.wpcf7 .wpcf7-form.cf7skins.cf7s-choc-shake input[type="range"],
+.wpcf7 .wpcf7-form.cf7skins.cf7s-choc-shake input[type=date],
+.wpcf7 .wpcf7-form.cf7skins.cf7s-choc-shake input[type=file] {
+}
+
+.wpcf7 .wpcf7-form.cf7skins.cf7s-choc-shake input[type="text"] {
+}
+
+.wpcf7 .wpcf7-form.cf7skins.cf7s-choc-shake input[type="email"] {
+}
+
+.wpcf7 .wpcf7-form.cf7skins.cf7s-choc-shake input[type="tel"] {
+}
+
+.wpcf7 .wpcf7-form.cf7skins.cf7s-choc-shake textarea {
+}
+
+/** Ordered & Unordered lists
+------------------------------------------------------------ */
+.wpcf7 .cf7s-choc-shake ol,
+.wpcf7 .cf7s-choc-shake ul,
+.wpcf7 .cf7s-choc-shake li {
+}
+
+.wpcf7 .cf7s-choc-shake ol {
+}
+
+.wpcf7 .cf7s-choc-shake li {
+	margin-bottom: 5px;
+}
+
+.wpcf7 .cf7s-choc-shake li label {
+}
+
+.wpcf7 .cf7s-choc-shake .wpcf7-list-item {
+}
+
+.wpcf7 .cf7s-choc-shake .wpcf7-list-item-label {
+	margin-right: 7px;
+}
+
+/** Checkboxes, Radio Buttons and Drop Down Menus
+------------------------------------------------------------ */
+.wpcf7 .wpcf7-form.cf7skins.cf7s-choc-shake input[type="checkbox"],
+.wpcf7 .wpcf7-form.cf7skins.cf7s-choc-shake input[type="radio"] {
+	margin-right: 6px;
+	border: none;
+	background: none;
+}
+
+.wpcf7 .cf7s-choc-shake select {
+	margin-bottom: 8px;
+	margin-left: 13px;
+	padding: 5px;
+	border: 1px solid #bfa48e;
+	background: #dec29d;
+}
+
+.wpcf7 .cf7s-choc-shake select option {
+}
+
+.wpcf7 .cf7s-choc-shake select option:hover {
+	color: #fff;
+	background: #bca17d;
+}
+
+.wpcf7 .cf7s-choc-shake .wpcf7-checkbox .wpcf7-list-item,
+.wpcf7 .cf7s-choc-shake .wpcf7-radio .wpcf7-list-item {
+	margin-left: 13px;
+}
+
+/** Other Fields
+NOTE: Use these CSS selectors to style these elements within CF7 forms
+------------------------------------------------------------ */
+
+
+/** Submit Buttons
+NOTE: These are the CSS selectors that should be used to style Submit Buttons within CF7 forms
+------------------------------------------------------------ */
+.wpcf7 .wpcf7-form.cf7skins.cf7s-choc-shake input[type="submit"] {
+	padding: 5px 15px;
+	color: #fff;
+	border: 1px solid #c9b3a0;
+	background: #bca17d;
+}
+
+.wpcf7 .wpcf7-form.cf7skins.cf7s-choc-shake input[type="submit"]:hover {
+	color: #866c4a;
+	background: #dec29d;
+}
+
+/** Special Classes
+NOTE: Special Classes are classes added in the CF7 Form HTML for a particular form 
+------------------------------------------------------------ */
+
+
+/** Ready Styles
+NOTE: Ready Styles are provided ready to be used in all CF7 forms
+------------------------------------------------------------ */
+.wpcf7 .cf7s-choc-shake .singleline {
+}
+
+.wpcf7 .cf7s-choc-shake .singleline li {
+}
+
+.wpcf7 .cf7s-choc-shake .singleline input {
+}
+
+.wpcf7 .cf7s-choc-shake .checkbox-horizontal,
+.wpcf7 .cf7s-choc-shake .radio-horizontal {
+}
+
+	.wpcf7 .cf7s-choc-shake .box {
+		margin-bottom: 10px;
+		padding: 10px;
+		border: 1px solid #c9b3a0;
+		background: #ccb7a4;
+	}
+
+.wpcf7 .cf7s-choc-shake .boxaround {  /* DELETE */
+	margin-bottom: 10px;
+	padding: 10px;
+	border: 1px solid #c9b3a0;
+	background: #ccb7a4;
+}
+
+.wpcf7 .cf7s-choc-shake .boxaround1 {  /* DELETE */
+	margin-bottom: 10px;
+	padding: 10px;
+	border: 1px solid #c9b3a0;
+	background: #ccb7a4;
+}
+
+	.wpcf7 .cf7s-choc-shake .box select {
+	}
+
+	.wpcf7  .wpcf7-form.cf7skins.cf7s-choc-shake .grid-hover [data-row-span] [data-field-span]:hover {
+		background: #fff7ef;
+	}
+
+	.wpcf7 .wpcf7-form.cf7skins.cf7s-choc-shake .grid-lined {
+		border-top: 1px solid #c9b3a0;
+	}
+
+	.wpcf7 .wpcf7-form.cf7skins.cf7s-choc-shake .grid-lined [data-row-span] {
+		border-bottom: 1px solid #c9b3a0;
+	}
+	
+	.wpcf7 .wpcf7-form.cf7skins.cf7s-choc-shake .grid-lined [data-row-span] [data-field-span] {
+		border-right: 1px solid #c9b3a0;
+	}
+	
+	.wpcf7 .wpcf7-form.cf7skins.cf7s-choc-shake .grid-lined [data-row-span] [data-field-span]:first-child {
+		border-left: 1px solid #c9b3a0;
+	}
+
+/** Multi Styles
+NOTE: These styles provide styling for CF7 Skins Multi elements
+------------------------------------------------------------ */
+
+/* Multi Fixes */
+.wpcf7 .cf7s-choc-shake.cf7multi {
+}
+
+.wpcf7 .cf7s-choc-shake.cf7multi .etabs li {
+}
+
+/* Easytabs */
+.wpcf7 .cf7s-choc-shake.cf7multi .tab-container {
+}
+
+.wpcf7 .cf7s-choc-shake.cf7multi .etabs {
+}
+
+.wpcf7 .cf7s-choc-shake.cf7multi .tab {
+	border: 1px solid #bfa48e;
+	border-bottom: none;
+	background: #dec29d;
+}
+
+.wpcf7 .cf7s-choc-shake.cf7multi .tab:hover {
+	background: #bca17d;;
+}
+
+
+.wpcf7 .cf7s-choc-shake.cf7multi .tab a {
+	color: #866c4a;
+}
+
+.wpcf7 .cf7s-choc-shake.cf7multi .tab a:hover {
+	color: #fff;;
+}
+
+.wpcf7 .cf7s-choc-shake.cf7multi .tab.active {
+	background: #fff;
+}
+
+.wpcf7 .cf7s-choc-shake.cf7multi .tab a.active {
+}
+
+.wpcf7 .cf7s-choc-shake.cf7multi .tab a.active:hover {
+	color: #866c4a;
+}
+
+.wpcf7 .cf7s-choc-shake.cf7multi .epanels {
+	border: 1px solid #bfa48e;
+}
+
+.wpcf7 .cf7s-choc-shake.cf7multi .panel-container {
+}
+
+/* Navigation */
+.wpcf7 .cf7s-choc-shake.cf7multi .navigation {
+}
+
+.wpcf7 .cf7s-choc-shake.cf7multi .navigation .previous,
+.wpcf7 .cf7s-choc-shake.cf7multi .navigation .next {
+	color: #fff;
+	border: 1px solid #c9b3a0;
+	background: #bca17d;
+}
+
+.wpcf7 .cf7s-choc-shake.cf7multi .navigation .previous:hover,
+.wpcf7 .cf7s-choc-shake.cf7multi .navigation .next:hover {
+}
+
+/* Pagination */
+.wpcf7 .cf7s-choc-shake.cf7multi .pagination {
+}
+
+/* Start & End Tabs */
+.wpcf7 .cf7s-choc-shake.cf7multi .navigation .start,
+.wpcf7 .wpcf7-form.cf7skins.cf7s-choc-shake.cf7multi .navigation .end {
+	padding: 5px 10px;
+	border: 1px solid #c9b3a0;
+	background: #bca17d;
+}
+
+.wpcf7 .cf7s-choc-shake.cf7multi .navigation .start:hover,
+.wpcf7 .wpcf7-form.cf7skins.cf7s-choc-shake.cf7multi .navigation .end:hover {
+	color: #866c4a;
+	background: #dec29d;
+}
+
+.wpcf7 .wpcf7-form.cf7skins.cf7s-choc-shake.cf7multi .navigation .end {
+}
+
+.wpcf7 .wpcf7-form.cf7skins.cf7s-choc-shake.cf7multi .navigation .end:hover {
+}
+
+/* Progress Bar */
+.wpcf7 .cf7s-choc-shake.cf7multi .cf7m-progress {
+	border: 1px solid #c9b3a0;
+	background: #e1cfbf;
+}
+
+.wpcf7 .cf7s-choc-shake.cf7multi .cf7m-progress div {
+	background: #bca17d;
+}
+
+/* Thank You Tab */
+.wpcf7 .cf7s-choc-shake.cf7multi .cf7m-thanks {
+}

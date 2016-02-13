@@ -1,0 +1,39 @@
+.wrap table,.wrap tr,.wrap th,.wrap  td,.wrap table,.wrap tr,.wrap th,.wrap  td{border: none !important; font-weight: normal !important; text-transform: none !important; vertical-align: middle; margin: 0;/*margin: 0; padding: 1px 0;*/}
+label{padding : 5px; /*margin-left: 10px;*/}
+.stngcntinr input[type="text"], .stngcntinr select{width: 80px;}
+#form_display{float: left; width: 100%; padding: 10px; overflow: hidden;}
+#out_form{float: left; width: 99%; overflow: hidden;}
+#footer_section{clear: both;}
+#header_section{clear: both;}
+.form_main{ float: left; width: 30%; padding: 10px; border: 1px solid #CCCCCC;}
+.stngcntinr{ float: right; width: 65%; padding: 10px; border: 1px solid #CCCCCC;}
+.form_main h2{border-bottom:  1px solid #CCCCCC;margin: 0 -10px; padding: 10px;}
+.stngcntinr h2{border-bottom: 1px solid #CCCCCC; margin: 0 -10px; padding: 10px;}
+.title{font-size: 16px;}
+.top_div{ float: left; margin: 10px 0; clear: both; width: 100%}
+.form-table tr{border: 1px solid #ccc !important;}
+.top_div h2{line-height: 30px;}
+.outer_tbl th{border: none; font-size: 12px; width:25%; }
+.outer_tbl td{border: none;  vertical-align: top ;width:75%;}
+.outer_tbl .inner_tbl th{border: none; font-size: 12px; width:50%;  padding-top: 7px;}
+.outer_tbl .inner_tbl td{border: none;  vertical-align: top ;width:50%;}
+.outer_tbl, .subset_tbl, .inner_tbl{width: 98%; /*margin: 10px 0;*/ }
+.outer_tbl .subset_tbl { /*border-bottom: 1px solid #ccc !important;margin: 10px;*/ }
+.subset_tbl th{border: none; font-size: 12px; width:35%;  padding-top: 7px;}
+.subset_tbl td{border: none;  vertical-align: top ;width:65%;}
+.sidebar-name h3{clear: none; }
+div.widgets-holder-wrap{width: 100%;}
+.wrap li {list-style: none; float: left; margin: 0 2px;}
+.settings_fileds{width: 100%;}
+.clear{clear:both;padding:5px;}
+.widget-holder { border: 1px solid #CCCCCC; padding: 10px; border-top: none;}
+.bottom_div{float: right;margin-right: 20px;}
+.shrtcd_dv{float: right;margin-right: 20px}
+#msg_sv{height: 30px;float: left;color:#090;}
+.outer_tbl .widgets-holder-wrap{width: 95% !important; float: right; margin: 10px 0;padding: 0;}
+ul.wp-submenu,ul.wp-submenu-wrap{margin: 0;}
+.widgets-holder-wrap.closed .widget-holder{display: none;}
+.sidebar-name{border: 1px solid #e1e1e1;}
+.custom-holder{margin: 10px 0;}
+.wrap .button{padding: 0 10px 1px !important;}
+.wrap .out_form textarea,.wrap .out_form input[type="text"],.wrap .out_form input[type="password"], .wrap .out_form input[type="email"],.wrap .out_form input[type="number"],.wrap .out_form input[type="search"],.wrap .out_form input[type="tel"],.wrap .out_form input[type="url"], .wrap .out_form input,.wrap .out_form select {max-width: 300px !important;}
